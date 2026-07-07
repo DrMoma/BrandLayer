@@ -1,0 +1,3261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Brand Layer — Design meets Craft</title>
+<meta name="description" content="Brand Layer — Design meets Craft. Independent design & build studio. Drammen, Norway." />
+<meta name="author" content="Brand Layer" />
+<meta name="theme-color" content="#FAFAFA" />
+<link rel="canonical" href="https://brandlayer.no/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Brand Layer" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:url" content="https://brandlayer.no/" />
+<meta property="og:title" content="Brand Layer — Design meets Craft" />
+<meta property="og:description" content="Independent design & build studio. Drammen, Norway." />
+<meta property="og:image" content="https://brandlayer.no/assets/pngbackround.png" />
+<meta property="og:image:width" content="2752" />
+<meta property="og:image:height" content="1536" />
+<meta property="og:image:alt" content="Brand Layer — a 3D B sculpture resting on a stone table" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Brand Layer — Design meets Craft" />
+<meta name="twitter:description" content="Independent design & build studio. Drammen, Norway." />
+<meta name="twitter:image" content="https://brandlayer.no/assets/pngbackround.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+<link rel="preload" as="image" href="assets/pngbackround.png" media="(min-width: 1024px)" />
+<link rel="preload" as="image" href="assets/logo.png" />
+<link rel="stylesheet" href="assets/fonts/fonts.css" />
+<script defer src="/_vercel/insights/script.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Brand Layer",
+  "alternateName": "Brand Layer Studio",
+  "url": "https://brandlayer.no",
+  "logo": "https://brandlayer.no/assets/logo.png",
+  "image": "https://brandlayer.no/assets/pngbackround.png",
+  "description": "Independent design & build studio. We design and build a handful of websites a year for people who care about the difference.",
+  "sameAs": ["https://www.instagram.com/yourbrandlayer"],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Drammen",
+    "addressCountry": "NO"
+  },
+  "areaServed": "Worldwide",
+  "priceRange": "$$$",
+  "founder": {
+    "@type": "Person",
+    "name": "Momcilo"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "sales",
+    "email": "hello@brandlayer.no",
+    "availableLanguage": ["en", "no"]
+  }
+}
+</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+          mono: ['"DM Mono"', 'ui-monospace', 'monospace'],
+        },
+        colors: {
+          brand: {
+            50:  '#F4F0FB',
+            100: '#E8E0F5',
+            200: '#D4C5EC',
+            300: '#B9A0DD',
+            400: '#987AD1',
+            500: '#8259C5',
+            600: '#6D48A8',
+            700: '#5E309C',
+            800: '#4B257F',
+            900: '#321655',
+          },
+          ink: '#0B0710',
+        },
+        borderRadius: {
+          'squircle': '28px',
+          'squircle-lg': '36px',
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html, body { background: #FAFAFA; color: #0B0710; font-family: 'DM Sans', sans-serif; -webkit-font-smoothing: antialiased; }
+  * { -webkit-tap-highlight-color: transparent; }
+  ::selection { background: #987AD1; color: white; }
+  .glass { background: rgba(255,255,255,0.62); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); }
+  .glass-dark { background: rgba(11,7,16,0.55); backdrop-filter: saturate(180%) blur(20px); }
+  .squircle { border-radius: 28px; }
+  .hairline { box-shadow: inset 0 0 0 1px rgba(11,7,16,0.06); }
+  .hairline-strong { box-shadow: inset 0 0 0 1px rgba(11,7,16,0.10); }
+  .grain { background-image: radial-gradient(rgba(0,0,0,0.04) 1px, transparent 1px); background-size: 3px 3px; }
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+
+  /* Hero subtle ambient glow — static, no drift */
+
+  /* Marquee */
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .marquee-track { animation: marquee 50s linear infinite; }
+
+  /* Spinning shape */
+  @keyframes spin-slow { to { transform: rotate(360deg); } }
+  .spin-slow { animation: spin-slow 20s linear infinite; }
+  @keyframes float-y { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+  @keyframes logo-wobble { 0%,100% { transform: translateZ(80px) rotate(-3deg); } 50% { transform: translateZ(80px) rotate(3deg); } }
+  @keyframes container-bob { 0%,100% { transform: rotateX(-12deg) rotateY(-18deg) rotateZ(-2deg); } 50% { transform: rotateX(-12deg) rotateY(-18deg) rotateZ(2deg); } }
+  .logo-wobble { animation: logo-wobble 4s ease-in-out infinite; }
+  .container-bob { animation: container-bob 6s ease-in-out infinite; }
+  .float-y { animation: float-y 4s ease-in-out infinite; }
+  @keyframes pulseDot { 0%,100% { opacity: .35; } 50% { opacity: 1; } }
+  .pulse-dot { animation: pulseDot 1.6s ease-in-out infinite; }
+
+  /* Code typing caret */
+  @keyframes blink { 50% { opacity: 0; } }
+  .caret { animation: blink 1s steps(1) infinite; }
+
+  /* Sweep gradient on cards */
+  @keyframes sweep { 0% { transform: translateX(-100%); } 100% { transform: translateX(400%); } }
+  .group:hover .sweep { animation: sweep 1.4s ease-out; }
+
+  /* Bento card hover lift */
+  .bento { transition: transform 600ms cubic-bezier(.2,.7,.2,1), box-shadow 600ms; }
+  .bento:hover { transform: translateY(-4px); }
+  /* Bento card hairline rendered above content so child images can't cover it */
+  .bento.hairline-strong::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: inset 0 0 0 1px rgba(11,7,16,0.32);
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  /* Process card subtle drift */
+  @keyframes driftA { 0%,100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-4px) rotate(1deg); } }
+  .drift-a { animation: driftA 8s ease-in-out infinite; }
+
+  /* Ticker chips for services */
+  @keyframes chipPing { 0% { transform: scale(.9); opacity:0; } 30% { opacity:1; } 100% { transform: scale(1); opacity:1; } }
+
+  /* Footer wordmark cutline */
+  .footer-cut {
+    border-top-left-radius: 64px;
+    border-top-right-radius: 64px;
+  }
+
+  /* Scrollbar polish */
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-thumb { background: rgba(11,7,16,0.12); border-radius: 999px; }
+  @media (max-width: 767px) {
+    .marquee-track { gap: 1.5rem !important; }
+  }
+
+  /* ===== Motion layer (added) ===== */
+  html { scroll-behavior: smooth; }
+  :root { --sy: 0px; }
+
+  /* Brand loading intro — minimal mark wipe */
+  body.is-loading { overflow: hidden; }
+  .brand-intro {
+    position: fixed; inset: 0; z-index: 100;
+    display: grid; place-items: center;
+    background: #FAFAFA;
+    transition: transform 480ms cubic-bezier(.7,0,.2,1);
+    will-change: transform;
+  }
+  .brand-intro.lifted { transform: translateY(-101%); }
+  .brand-intro__stack {
+    display: inline-flex; align-items: center;
+    gap: 0; line-height: 1;
+    transform: translateX(var(--shift, 0));
+    transition: transform 800ms cubic-bezier(.7,0,.25,1) 500ms;
+    will-change: transform;
+  }
+  .brand-intro__stack.animate { transform: translateX(0); }
+  .brand-intro__b {
+    height: clamp(64px, 9vw, 96px); width: auto;
+    opacity: 0; transform: scale(.94);
+    transition: opacity 380ms cubic-bezier(.2,.7,.2,1) 100ms,
+                transform 380ms cubic-bezier(.2,.7,.2,1) 100ms;
+    will-change: opacity, transform;
+  }
+  .brand-intro__stack.animate .brand-intro__b { opacity: 1; transform: scale(1); }
+  .brand-intro__rest {
+    display: inline-flex; align-items: center;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-weight: 800; letter-spacing: -0.04em; color: #0B0710;
+    font-size: clamp(34px, 5vw, 52px);
+    transform: translate(-0.1em, 9px);
+  }
+  .brand-intro__rest > span {
+    display: inline-block; white-space: pre;
+    opacity: 0; transform: translateY(8px);
+    transition: opacity 320ms cubic-bezier(.2,.7,.2,1),
+                transform 320ms cubic-bezier(.2,.7,.2,1);
+    transition-delay: calc(500ms + var(--ci, 0) * 50ms);
+    will-change: opacity, transform;
+  }
+  .brand-intro__stack.animate .brand-intro__rest > span { opacity: 1; transform: translateY(0); }
+  .brand-intro__caret {
+    display: inline-block; width: 3px; height: 0.7em;
+    margin-left: 6px; align-self: center;
+    background: #5E309C; border-radius: 2px;
+    opacity: 0;
+    transition: opacity 200ms ease-out;
+    transition-delay: 1100ms;
+  }
+  .brand-intro__stack.animate .brand-intro__caret {
+    opacity: 1;
+    animation: blink 900ms steps(1) 1300ms infinite;
+  }
+
+  /* Sticky scroll progress bar */
+  .scroll-progress {
+    position: fixed; top: 0; left: 0; right: 0;
+    height: 2px; z-index: 60;
+    background: transparent;
+    pointer-events: none;
+  }
+  .scroll-progress > span {
+    display: block; height: 100%; width: 100%;
+    background: linear-gradient(90deg, #5E309C, #B9A0DD);
+    transform: scaleX(0); transform-origin: left center;
+    will-change: transform;
+  }
+
+  /* Section scroll-reveals */
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity 700ms cubic-bezier(.2,.7,.2,1),
+      transform 700ms cubic-bezier(.2,.7,.2,1);
+    transition-delay: calc(var(--i, 0) * 70ms);
+    will-change: transform, opacity;
+  }
+  [data-reveal].is-in-view {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Services cards — a softer, larger bottom-up rise */
+  [data-reveal].reveal-rise {
+    transform: translateY(56px) scale(.985);
+    transition:
+      opacity 1000ms cubic-bezier(.22,1,.36,1),
+      transform 1000ms cubic-bezier(.22,1,.36,1);
+    transition-delay: calc(var(--i, 0) * 110ms);
+  }
+  [data-reveal].reveal-rise.is-in-view { transform: none; }
+
+  /* Services carousel — sequential (non-overlapping) directional swap + animated stage height.
+     The outgoing slide leaves first; the incoming slide waits, then enters. Per-slide timing
+     (including the enter delay) is set inline in JS below; these are just fallbacks. */
+  .svc-slide {
+    transition:
+      transform 200ms ease-in-out,
+      opacity 200ms ease-in-out;
+    will-change: transform, opacity;
+  }
+  .svc-stage { transition: height 400ms ease-in-out; }
+  @media (prefers-reduced-motion: reduce) {
+    .svc-slide, .svc-stage { transition: none !important; }
+  }
+
+  /* Hero gradient mesh parallax */
+  .parallax-slow { transform: translate3d(0, calc(var(--sy) * 0.06), 0); }
+  .parallax-mid  { transform: translate3d(0, calc(var(--sy) * 0.10), 0); }
+  .parallax-fast { transform: translate3d(0, calc(var(--sy) * 0.14), 0); }
+
+  /* ===== Selected Work — collectible card stack ===== */
+  .cstack-outer {
+    position: relative;
+    overflow-x: clip;
+    overflow-y: visible;
+  }
+  .cstack-sticky {
+    position: sticky; top: 0;
+    height: 100vh; min-height: 640px;
+    overflow: visible;
+    display: flex; flex-direction: column;
+    background: linear-gradient(180deg, #FAFAFA 0%, #F5F1FB 55%, #FAFAFA 100%);
+  }
+  .cstack-hdr {
+    position: relative; z-index: 2;
+    padding: 88px 24px 0;
+    display: flex; align-items: flex-end; justify-content: space-between; gap: 24px;
+    max-width: 1280px; margin: 0 auto; width: 100%;
+  }
+  .cstack-stage {
+    position: relative; flex: 1;
+    perspective: 1400px;
+    perspective-origin: 50% 40%;
+  }
+  .cstack-card {
+    position: absolute;
+    top: 50%; left: 50%;
+    height: min(62vh, 520px);
+    aspect-ratio: 9 / 16;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #0B0710;
+    box-shadow:
+      0 30px 80px -20px rgba(11,7,16,0.40),
+      0 14px 42px -10px rgba(11,7,16,0.25),
+      inset 0 0 0 1px rgba(255,255,255,0.06);
+    will-change: transform, opacity;
+    transform: translate3d(-50%, -50%, 0) translate3d(120vw, 0, 0) rotate(20deg);
+    opacity: 0;
+  }
+  .cstack-card:focus-visible { outline: 3px solid #5E309C; outline-offset: 6px; }
+  .cstack-card__img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+  .cstack-card__chrome {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 18px 20px 22px;
+    z-index: 2;
+    pointer-events: none;
+    background: linear-gradient(180deg,
+      rgba(11,7,16,0.55) 0%,
+      transparent 18%,
+      transparent 58%,
+      rgba(11,7,16,0.85) 100%);
+    color: #fff;
+  }
+  .cstack-card__top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+  .cstack-card__pill {
+    display: inline-flex; align-items: center;
+    padding: 5px 11px; border-radius: 999px;
+    background: rgba(255,255,255,0.14);
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    font-size: 11px; font-weight: 500; letter-spacing: 0.02em;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.18);
+  }
+  .cstack-card__case {
+    font-family: 'DM Mono', ui-monospace, monospace;
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    padding-top: 4px;
+  }
+  .cstack-card__bot { display: flex; flex-direction: column; gap: 4px; }
+  .cstack-card__name {
+    font-size: clamp(22px, 2.6vw, 32px);
+    font-weight: 700; letter-spacing: -0.02em; line-height: 1.0;
+  }
+  .cstack-card__tag { font-size: 12px; opacity: 0.78; }
+  .cstack-card__cta {
+    position: absolute; right: 14px; bottom: 14px; z-index: 3;
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 7px 11px; border-radius: 999px;
+    background: rgba(255,255,255,0.94); color: #0B0710;
+    font-size: 11px; font-weight: 500;
+    box-shadow: 0 6px 18px -6px rgba(0,0,0,0.4);
+    opacity: 0; transform: translateY(4px);
+    transition: opacity 220ms ease-out, transform 220ms ease-out;
+  }
+  .cstack-card[data-on-top="true"]:hover .cstack-card__cta { opacity: 1; transform: translateY(0); }
+
+  /* Bottom indicator */
+  .cstack-rail {
+    position: relative; z-index: 2;
+    padding: 18px 24px 28px;
+    display: flex; align-items: center; justify-content: space-between;
+    max-width: 1280px; margin: 0 auto; width: 100%;
+  }
+  .cstack-dots { display: flex; gap: 10px; align-items: center; }
+  .cstack-dots .dot {
+    width: 8px; height: 8px; border-radius: 999px;
+    background: rgba(11,7,16,0.18);
+    transition: background 280ms ease-out, width 280ms ease-out;
+  }
+  .cstack-dots .dot[data-active="true"] { background: #5E309C; width: 26px; }
+  .cstack-hint {
+    font-family: 'DM Mono', ui-monospace, monospace;
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(11,7,16,0.5);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .cstack-hint__arrow { animation: float-y 2.4s ease-in-out infinite; }
+
+  /* ===== Work modal ===== */
+  .work-modal {
+    position: fixed; inset: 0; z-index: 80;
+    display: grid; place-items: center;
+    padding: 24px;
+    opacity: 0; pointer-events: none;
+    transition: opacity 440ms ease-out;
+  }
+  .work-modal.is-open { opacity: 1; pointer-events: auto; overscroll-behavior: contain; }
+  .work-modal__backdrop {
+    position: absolute; inset: 0;
+    overflow: hidden;
+    background:
+      linear-gradient(135deg, rgba(250,250,250,0.92), rgba(244,240,251,0.78)),
+      linear-gradient(90deg, rgba(94,48,156,0.12), rgba(255,255,255,0.3), rgba(152,122,209,0.12));
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+  }
+  .work-modal__backdrop::before,
+  .work-modal__backdrop::after {
+    content: "";
+    position: absolute;
+    inset: -20%;
+    pointer-events: none;
+  }
+  .work-modal__backdrop::before {
+    background:
+      repeating-linear-gradient(100deg,
+        transparent 0 54px,
+        rgba(94,48,156,0.055) 54px 55px,
+        transparent 55px 108px);
+    animation: modalFieldDrift 18s linear infinite;
+  }
+  .work-modal__backdrop::after {
+    background:
+      linear-gradient(115deg,
+        transparent 0%,
+        rgba(255,255,255,0.52) 32%,
+        rgba(185,160,221,0.24) 46%,
+        transparent 62%);
+    opacity: .55;
+    transform: translateX(-18%);
+    animation: modalSheen 12s ease-in-out infinite alternate;
+  }
+  @keyframes modalFieldDrift {
+    from { transform: translate3d(-18px, 0, 0); }
+    to { transform: translate3d(42px, 0, 0); }
+  }
+  @keyframes modalSheen {
+    from { transform: translate3d(-22%, -3%, 0); }
+    to { transform: translate3d(18%, 3%, 0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .work-modal__backdrop::before,
+    .work-modal__backdrop::after { animation: none; }
+    .work-modal__card { transition: opacity 200ms ease-out !important; transform: none !important; }
+  }
+  .work-modal__card {
+    position: relative; z-index: 1;
+    background: #fff;
+    width: 100%; max-width: 1040px;
+    max-height: 92vh; overflow: auto;
+    scrollbar-width: none;
+    border-radius: 28px;
+    box-shadow: 0 50px 120px -30px rgba(50,22,85,0.38);
+    transform-origin: top left;
+    opacity: 0;
+    transition: transform 420ms cubic-bezier(.22, 1, .36, 1), opacity 280ms ease-out;
+  }
+  .work-modal__card::-webkit-scrollbar { display: none; }
+  .work-modal.is-open .work-modal__card { transform: translateY(0) scale(1); opacity: 1; }
+  .work-modal__hdr {
+    position: sticky; top: 0; z-index: 2;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 20px 28px;
+    background: rgba(255,255,255,0.86); backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(11,7,16,0.06);
+  }
+  .work-modal__title { font-size: clamp(22px, 2.4vw, 32px); font-weight: 700; letter-spacing: -0.02em; line-height: 1; }
+  .work-modal__sub { margin-top: 4px; font-size: 12px; color: rgba(11,7,16,0.55); }
+  .work-modal__close {
+    width: 40px; height: 40px; border-radius: 999px;
+    display: grid; place-items: center;
+    background: rgba(11,7,16,0.06); color: #0B0710;
+    transition: background 200ms ease-out;
+  }
+  .work-modal__close:hover { background: rgba(11,7,16,0.12); }
+  .work-modal__body { padding: 28px; display: flex; flex-direction: column; gap: 24px; }
+  .work-modal__figure { margin: 0; display: flex; flex-direction: column; gap: 10px; }
+  .work-modal__img {
+    display: block; width: 100%; height: auto;
+    border-radius: 14px;
+    background: rgba(11,7,16,0.06);
+    opacity: 0; transition: opacity 480ms ease-out;
+  }
+  .work-modal__img.is-loaded { opacity: 1; }
+  .work-modal__img--hero     { max-height: 70vh; object-fit: cover; }
+  .work-modal__img--wide     { aspect-ratio: 4 / 3; object-fit: cover; }
+  .work-modal__img--portrait {
+    max-width: min(420px, 80%);
+    margin: 0 auto;
+    aspect-ratio: 3 / 4; object-fit: cover;
+    box-shadow: 0 24px 60px -20px rgba(11,7,16,0.35);
+  }
+  .work-modal__img--widgets  { aspect-ratio: 16 / 9; object-fit: cover; }
+  .work-modal__img--half     { aspect-ratio: 3 / 4; object-fit: cover; }
+  .work-modal__img--framed   { border: 2px solid #0B0710; background: #fff; }
+
+  /* Wide + portrait paired side-by-side. Flex grow 16:9 gives matched heights
+     because 4/3 × 16 == 3/4 × something… actually it falls out to equal heights
+     when the wide gets 16fr and the portrait gets 9fr of the available width. */
+  .work-modal__pair {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .work-modal__pair > .work-modal__figure--wide     { flex: 16 1 0; min-width: 0; }
+  .work-modal__pair > .work-modal__figure--portrait { flex: 9  1 0; min-width: 0; }
+  .work-modal__pair--even > .work-modal__figure     { flex: 1 1 0; min-width: 0; }
+  .work-modal__pair--even .work-modal__img--half    { max-width: 100%; margin: 0; }
+  .work-modal__pair .work-modal__img--portrait {
+    max-width: 100%;
+    margin: 0;
+    box-shadow: 0 16px 40px -16px rgba(11,7,16,0.25);
+  }
+  @media (max-width: 720px) {
+    .work-modal__pair { flex-direction: column; gap: 20px; }
+    .work-modal__pair .work-modal__img--portrait {
+      max-width: min(420px, 80%);
+      margin: 0 auto;
+      box-shadow: 0 24px 60px -20px rgba(11,7,16,0.35);
+    }
+  }
+  .work-modal__caption {
+    font-family: 'DM Mono', ui-monospace, monospace;
+    font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+    color: rgba(11,7,16,0.5);
+    text-align: center;
+  }
+
+  /* Two-column intro: blurb + features card */
+  .work-modal__intro { display: grid; gap: 28px; grid-template-columns: 1.4fr 1fr; align-items: start; }
+  @media (max-width: 720px) { .work-modal__intro { grid-template-columns: 1fr; gap: 20px; } }
+  .work-modal__features {
+    padding: 18px; border-radius: 14px; background: #F4F0FB;
+    box-shadow: inset 0 0 0 1px rgba(11,7,16,0.04);
+  }
+  .work-modal__features-title {
+    font-family: 'DM Mono', ui-monospace, monospace;
+    font-size: 10px; letter-spacing: .22em; text-transform: uppercase;
+    color: rgba(11,7,16,0.55);
+    margin-bottom: 12px;
+  }
+  .work-modal__features ul { display: flex; flex-direction: column; gap: 9px; list-style: none; padding: 0; margin: 0; }
+  .work-modal__features li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #0B0710; }
+  .work-modal__features li::before {
+    content: ''; width: 6px; height: 6px; border-radius: 999px;
+    background: #5E309C; flex-shrink: 0;
+  }
+
+  .work-modal__copy { font-size: 16px; line-height: 1.65; color: rgba(11,7,16,0.78); max-width: 64ch; }
+  .work-modal__meta {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+    padding: 16px; border-radius: 16px; background: #F4F0FB;
+  }
+  .work-modal__meta > div > .k { font-family: 'DM Mono', ui-monospace, monospace; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: rgba(11,7,16,0.5); }
+  .work-modal__meta > div > .v { margin-top: 4px; font-size: 14px; font-weight: 500; color: #0B0710; }
+  .work-modal__footer {
+    display: flex; flex-wrap: wrap; gap: 12px; padding-top: 8px;
+    border-top: 1px solid rgba(11,7,16,0.06);
+  }
+  .work-modal__btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 16px; border-radius: 999px;
+    background: #0B0710; color: #fff; font-size: 13px; font-weight: 500;
+    transition: background 200ms ease-out;
+  }
+  .work-modal__btn:hover { background: #5E309C; }
+  .work-modal__btn--ghost { background: rgba(11,7,16,0.05); color: #0B0710; }
+  .work-modal__btn--ghost:hover { background: rgba(11,7,16,0.10); }
+
+  .mobile-menu {
+    transform: translateY(-12px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 360ms cubic-bezier(.22, 1, .36, 1), opacity 280ms ease-out;
+  }
+  .mobile-menu.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .mobile-menu__item {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 320ms ease-out, transform 360ms cubic-bezier(.22, 1, .36, 1);
+  }
+  .mobile-menu.is-open .mobile-menu__item {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .mobile-menu.is-open .mobile-menu__item:nth-child(1) { transition-delay: 90ms; }
+  .mobile-menu.is-open .mobile-menu__item:nth-child(2) { transition-delay: 140ms; }
+  .mobile-menu.is-open .mobile-menu__item:nth-child(3) { transition-delay: 190ms; }
+  .mobile-menu.is-open .mobile-menu__item:nth-child(4) { transition-delay: 240ms; }
+  .mobile-menu.is-open .mobile-menu__item:nth-child(5) { transition-delay: 290ms; }
+  .mobile-menu.is-open .mobile-menu__item:nth-child(6) { transition-delay: 340ms; }
+  .mobile-menu__cta {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 320ms ease-out, transform 360ms cubic-bezier(.22, 1, .36, 1);
+  }
+  .mobile-menu.is-open .mobile-menu__cta {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 400ms;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .mobile-menu, .mobile-menu__item, .mobile-menu__cta {
+      transition: opacity 180ms ease-out !important;
+      transform: none !important;
+      transition-delay: 0ms !important;
+    }
+  }
+
+  /* Tablet & mobile: cards still stack via JS but enter from the bottom; card sizing scales down */
+  @media (max-width: 1024px) {
+    .cstack-card { height: min(58vh, 480px); border-radius: 10px; }
+    .cstack-hdr { padding: 72px 20px 0; flex-direction: column; align-items: flex-start; gap: 8px; }
+  }
+  @media (max-width: 640px) {
+    .work-modal { padding: 0; }
+    .work-modal__card { max-height: 100vh; border-radius: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .brand-intro { transition: opacity 220ms linear; }
+    .brand-intro.lifted { transform: none; opacity: 0; }
+    .brand-intro__stack { transform: none !important; transition: none !important; }
+    .brand-intro__b { opacity: 1 !important; transform: none !important; transition: none !important; }
+    .brand-intro__rest > span { opacity: 1 !important; transform: none !important; transition: none !important; }
+    .brand-intro__caret { display: none; }
+    [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; }
+    .parallax-slow, .parallax-mid, .parallax-fast { transform: none !important; }
+    .scroll-progress { display: none; }
+    .cstack-outer { height: auto !important; }
+    .cstack-sticky { position: static; height: auto; min-height: 0; overflow: visible; padding: 48px 0; background: transparent; }
+    .cstack-stage { display: flex; flex-direction: column; gap: 24px; align-items: center; padding: 24px 0; perspective: none; }
+    .cstack-card { position: relative; top: auto; left: auto; transform: none !important; opacity: 1 !important; margin: 0 auto; width: min(320px, 80vw); }
+    .cstack-rail { display: none; }
+    .work-modal__card { transform: none !important; }
+    .cstack-hint__arrow { animation: none; }
+  }
+
+  /* Skip-to-content link (visible on keyboard focus) */
+  .skip-link {
+    position: absolute; left: 16px; top: -64px;
+    z-index: 1000;
+    background: #0B0710; color: #fff;
+    padding: 10px 14px; border-radius: 12px;
+    font-size: 14px; text-decoration: none;
+    box-shadow: 0 10px 30px -10px rgba(11,7,16,0.4);
+    transition: top 200ms cubic-bezier(.22,1,.36,1);
+  }
+  .skip-link:focus { top: 16px; outline: 2px solid #987AD1; outline-offset: 2px; }
+
+  /* Burger → X icon morph */
+  .burger { position: relative; width: 38px; height: 38px; display: grid; place-items: center; }
+  .burger__bar {
+    position: absolute; left: 50%; top: 50%; height: 1.6px; width: 18px;
+    background: #0B0710; border-radius: 999px;
+    transform: translate(-50%, -50%);
+    transition: transform 320ms cubic-bezier(.22,1,.36,1), opacity 200ms ease-out;
+  }
+  .burger__bar--top { transform: translate(-50%, calc(-50% - 6px)); }
+  .burger__bar--bot { transform: translate(-50%, calc(-50% + 6px)); }
+  .burger.is-open .burger__bar--top { transform: translate(-50%, -50%) rotate(45deg); }
+  .burger.is-open .burger__bar--mid { opacity: 0; transform: translate(-50%, -50%) scaleX(0); }
+  .burger.is-open .burger__bar--bot { transform: translate(-50%, -50%) rotate(-45deg); }
+
+  /* Mobile menu — exit stagger (smaller delays so close is snappier than open) */
+  .mobile-menu__item:nth-child(1) { transition-delay: 0ms; }
+  .mobile-menu__item:nth-child(2) { transition-delay: 20ms; }
+  .mobile-menu__item:nth-child(3) { transition-delay: 40ms; }
+  .mobile-menu__item:nth-child(4) { transition-delay: 60ms; }
+  .mobile-menu__item:nth-child(5) { transition-delay: 80ms; }
+  .mobile-menu__item:nth-child(6) { transition-delay: 100ms; }
+
+  /* Hero PNG entrance — gentle fade + drift after the headline reveals */
+  @keyframes heroPngEnter {
+    from { opacity: 0; transform: translate3d(20px, 12px, 0); }
+    to { opacity: 1; transform: translate3d(0, 0, 0); }
+  }
+  .hero-png-enter { animation: heroPngEnter 900ms cubic-bezier(.22,1,.36,1) 400ms both; }
+  @media (prefers-reduced-motion: reduce) { .hero-png-enter { animation: none; } }
+
+  /* Scroll-to-top button */
+  .scroll-top-btn {
+    position: fixed; right: 20px; bottom: 20px; z-index: 60;
+    width: 44px; height: 44px; border-radius: 999px;
+    background: rgba(11,7,16,0.85); color: white;
+    display: grid; place-items: center;
+    box-shadow: 0 14px 40px -10px rgba(11,7,16,0.4);
+    opacity: 0; transform: translateY(12px) scale(.9);
+    pointer-events: none;
+    transition: opacity 280ms ease-out, transform 280ms cubic-bezier(.22,1,.36,1), background 200ms;
+    backdrop-filter: blur(10px);
+  }
+  .scroll-top-btn.is-visible { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+  .scroll-top-btn:hover { background: #5E309C; }
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-top-btn { transition: opacity 180ms ease-out; transform: none !important; }
+  }
+
+  /* Process — mobile spine connecting the cards vertically */
+  .process-spine-mobile {
+    position: absolute; left: 24px; top: 0; bottom: 0; width: 1px;
+    background: linear-gradient(to bottom, transparent, rgba(152,122,209,0.35), transparent);
+  }
+  @media (min-width: 768px) { .process-spine-mobile { display: none; } }
+</style>
+  <!-- Cal.com embed -->
+  <script>
+    (function (C, A, L) {
+      let p = function (a, ar) { a.q.push(ar); };
+      let d = C.document;
+      C.Cal = C.Cal || function () {
+        let cal = C.Cal;
+        let ar = arguments;
+        if (!cal.loaded) {
+          cal.ns = {};
+          cal.q = cal.q || [];
+          d.head.appendChild(d.createElement("script")).src = A;
+          cal.loaded = true;
+        }
+        if (ar[0] === L) {
+          const api = function () { p(api, arguments); };
+          const namespace = ar[1];
+          api.q = api.q || [];
+          typeof namespace === "string" ? (cal.ns[namespace] = api) && p(api, ar) : p(cal, ar);
+          return;
+        }
+        p(cal, ar);
+      };
+    })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", { origin: "https://cal.com" });
+    Cal("ui", {
+      theme: "dark",
+      hideEventTypeDetails: false,
+      layout: "month_view"
+    });
+  </script>
+</head>
+<body class="overflow-x-hidden">
+<div id="brand-intro" class="brand-intro" aria-hidden="true">
+  <div class="brand-intro__stack" id="brand-intro-stack">
+    <img class="brand-intro__b" src="assets/logo.png" alt="" decoding="sync" />
+    <span class="brand-intro__rest" aria-label="rand Layer">
+      <span style="--ci:0">r</span><span style="--ci:1">a</span><span style="--ci:2">n</span><span style="--ci:3">d</span><span style="--ci:4"> </span><span style="--ci:5">L</span><span style="--ci:6">a</span><span style="--ci:7">y</span><span style="--ci:8">e</span><span style="--ci:9">r</span>
+    </span>
+  </div>
+</div>
+<div id="scroll-progress" class="scroll-progress" aria-hidden="true"><span></span></div>
+<script>
+(function () {
+  var reduced = false;
+  try { reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+  document.body.classList.add('is-loading');
+
+  var stack = document.getElementById('brand-intro-stack');
+  var img   = stack && stack.querySelector('.brand-intro__b');
+  var rest  = stack && stack.querySelector('.brand-intro__rest');
+
+  function prime() {
+    if (!stack || !rest) { return; }
+    var w = rest.getBoundingClientRect().width;
+    stack.style.setProperty('--shift', (w / 2) + 'px');
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () { stack.classList.add('animate'); });
+    });
+  }
+  if (img && !img.complete) {
+    img.addEventListener('load',  prime, { once: true });
+    img.addEventListener('error', prime, { once: true });
+  } else {
+    prime();
+  }
+
+  var lift = function () {
+    var el = document.getElementById('brand-intro');
+    if (!el) return;
+    el.classList.add('lifted');
+    document.body.classList.remove('is-loading');
+    window.dispatchEvent(new CustomEvent('brand:intro-lifted'));
+    setTimeout(function () { if (el && el.parentNode) el.parentNode.removeChild(el); }, 700);
+  };
+  setTimeout(lift, reduced ? 280 : 2000);
+
+  var bar = document.querySelector('#scroll-progress > span');
+  var raf = 0;
+  var onScroll = function () {
+    if (raf) return;
+    raf = requestAnimationFrame(function () {
+      raf = 0;
+      var h = document.documentElement;
+      var max = h.scrollHeight - h.clientHeight;
+      var p = max > 0 ? h.scrollTop / max : 0;
+      if (bar) bar.style.transform = 'scaleX(' + p + ')';
+      h.style.setProperty('--sy', h.scrollTop + 'px');
+    });
+  };
+  document.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+<div id="root"></div>
+
+<script>
+  /* For the curious. */
+  try {
+    console.log(
+      '%cBrand Layer%cLike looking under the hood? We build sites like this for a living. → hello@brandlayer.no',
+      'background:#5E309C;color:#fff;padding:4px 10px;border-radius:6px;font-family:"DM Mono",ui-monospace,monospace;font-weight:600;letter-spacing:0.08em;',
+      'color:#5E309C;font-family:"DM Mono",ui-monospace,monospace;padding-left:10px;'
+    );
+  } catch (e) {}
+</script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" data-presets="react">
+
+// tweaks-panel.jsx
+// Reusable Tweaks shell + form-control helpers.
+//
+// Owns the host protocol (listens for __activate_edit_mode / __deactivate_edit_mode,
+// posts __edit_mode_available / __edit_mode_set_keys / __edit_mode_dismissed) so
+// individual prototypes don't re-roll it. Ships a consistent set of controls so you
+// don't hand-draw <input type="range">, segmented radios, steppers, etc.
+//
+// Usage (in an HTML file that loads React + Babel):
+//
+//   const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+//     "primaryColor": "#D97757",
+//     "palette": ["#D97757", "#29261b", "#f6f4ef"],
+//     "fontSize": 16,
+//     "density": "regular",
+//     "dark": false
+//   }/*EDITMODE-END*/;
+//
+//   function App() {
+//     const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+//     return (
+//       <div style={{ fontSize: t.fontSize, color: t.primaryColor }}>
+//         Hello
+//         <TweaksPanel>
+//           <TweakSection label="Typography" />
+//           <TweakSlider label="Font size" value={t.fontSize} min={10} max={32} unit="px"
+//                        onChange={(v) => setTweak('fontSize', v)} />
+//           <TweakRadio  label="Density" value={t.density}
+//                        options={['compact', 'regular', 'comfy']}
+//                        onChange={(v) => setTweak('density', v)} />
+//           <TweakSection label="Theme" />
+//           <TweakColor  label="Primary" value={t.primaryColor}
+//                        options={['#D97757', '#2A6FDB', '#1F8A5B', '#7A5AE0']}
+//                        onChange={(v) => setTweak('primaryColor', v)} />
+//           <TweakColor  label="Palette" value={t.palette}
+//                        options={[['#D97757', '#29261b', '#f6f4ef'],
+//                                  ['#475569', '#0f172a', '#f1f5f9']]}
+//                        onChange={(v) => setTweak('palette', v)} />
+//           <TweakToggle label="Dark mode" value={t.dark}
+//                        onChange={(v) => setTweak('dark', v)} />
+//         </TweaksPanel>
+//       </div>
+//     );
+//   }
+//
+// ─────────────────────────────────────────────────────────────────────────────
+
+const __TWEAKS_STYLE = `
+  .twk-panel{position:fixed;right:16px;bottom:16px;z-index:2147483646;width:280px;
+    max-height:calc(100vh - 32px);display:flex;flex-direction:column;
+    transform:scale(var(--dc-inv-zoom,1));transform-origin:bottom right;
+    background:rgba(250,249,247,.78);color:#29261b;
+    -webkit-backdrop-filter:blur(24px) saturate(160%);backdrop-filter:blur(24px) saturate(160%);
+    border:.5px solid rgba(255,255,255,.6);border-radius:14px;
+    box-shadow:0 1px 0 rgba(255,255,255,.5) inset,0 12px 40px rgba(0,0,0,.18);
+    font:11.5px/1.4 ui-sans-serif,system-ui,-apple-system,sans-serif;overflow:hidden}
+  .twk-hd{display:flex;align-items:center;justify-content:space-between;
+    padding:10px 8px 10px 14px;cursor:move;user-select:none}
+  .twk-hd b{font-size:12px;font-weight:600;letter-spacing:.01em}
+  .twk-x{appearance:none;border:0;background:transparent;color:rgba(41,38,27,.55);
+    width:22px;height:22px;border-radius:6px;cursor:default;font-size:13px;line-height:1}
+  .twk-x:hover{background:rgba(0,0,0,.06);color:#29261b}
+  .twk-body{padding:2px 14px 14px;display:flex;flex-direction:column;gap:10px;
+    overflow-y:auto;overflow-x:hidden;min-height:0;
+    scrollbar-width:thin;scrollbar-color:rgba(0,0,0,.15) transparent}
+  .twk-body::-webkit-scrollbar{width:8px}
+  .twk-body::-webkit-scrollbar-track{background:transparent;margin:2px}
+  .twk-body::-webkit-scrollbar-thumb{background:rgba(0,0,0,.15);border-radius:4px;
+    border:2px solid transparent;background-clip:content-box}
+  .twk-body::-webkit-scrollbar-thumb:hover{background:rgba(0,0,0,.25);
+    border:2px solid transparent;background-clip:content-box}
+  .twk-row{display:flex;flex-direction:column;gap:5px}
+  .twk-row-h{flex-direction:row;align-items:center;justify-content:space-between;gap:10px}
+  .twk-lbl{display:flex;justify-content:space-between;align-items:baseline;
+    color:rgba(41,38,27,.72)}
+  .twk-lbl>span:first-child{font-weight:500}
+  .twk-val{color:rgba(41,38,27,.5);font-variant-numeric:tabular-nums}
+
+  .twk-sect{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+    color:rgba(41,38,27,.45);padding:10px 0 0}
+  .twk-sect:first-child{padding-top:0}
+
+  .twk-field{appearance:none;width:100%;height:26px;padding:0 8px;
+    border:.5px solid rgba(0,0,0,.1);border-radius:7px;
+    background:rgba(255,255,255,.6);color:inherit;font:inherit;outline:none}
+  .twk-field:focus{border-color:rgba(0,0,0,.25);background:rgba(255,255,255,.85)}
+  select.twk-field{padding-right:22px;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='rgba(0,0,0,.5)' d='M0 0h10L5 6z'/></svg>");
+    background-repeat:no-repeat;background-position:right 8px center}
+
+  .twk-slider{appearance:none;-webkit-appearance:none;width:100%;height:4px;margin:6px 0;
+    border-radius:999px;background:rgba(0,0,0,.12);outline:none}
+  .twk-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;
+    width:14px;height:14px;border-radius:50%;background:#fff;
+    border:.5px solid rgba(0,0,0,.12);box-shadow:0 1px 3px rgba(0,0,0,.2);cursor:default}
+  .twk-slider::-moz-range-thumb{width:14px;height:14px;border-radius:50%;
+    background:#fff;border:.5px solid rgba(0,0,0,.12);box-shadow:0 1px 3px rgba(0,0,0,.2);cursor:default}
+
+  .twk-seg{position:relative;display:flex;padding:2px;border-radius:8px;
+    background:rgba(0,0,0,.06);user-select:none}
+  .twk-seg-thumb{position:absolute;top:2px;bottom:2px;border-radius:6px;
+    background:rgba(255,255,255,.9);box-shadow:0 1px 2px rgba(0,0,0,.12);
+    transition:left .15s cubic-bezier(.3,.7,.4,1),width .15s}
+  .twk-seg.dragging .twk-seg-thumb{transition:none}
+  .twk-seg button{appearance:none;position:relative;z-index:1;flex:1;border:0;
+    background:transparent;color:inherit;font:inherit;font-weight:500;min-height:22px;
+    border-radius:6px;cursor:default;padding:4px 6px;line-height:1.2;
+    overflow-wrap:anywhere}
+
+  .twk-toggle{position:relative;width:32px;height:18px;border:0;border-radius:999px;
+    background:rgba(0,0,0,.15);transition:background .15s;cursor:default;padding:0}
+  .twk-toggle[data-on="1"]{background:#34c759}
+  .twk-toggle i{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;
+    background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.25);transition:transform .15s}
+  .twk-toggle[data-on="1"] i{transform:translateX(14px)}
+
+  .twk-num{display:flex;align-items:center;height:26px;padding:0 0 0 8px;
+    border:.5px solid rgba(0,0,0,.1);border-radius:7px;background:rgba(255,255,255,.6)}
+  .twk-num-lbl{font-weight:500;color:rgba(41,38,27,.6);cursor:ew-resize;
+    user-select:none;padding-right:8px}
+  .twk-num input{flex:1;min-width:0;height:100%;border:0;background:transparent;
+    font:inherit;font-variant-numeric:tabular-nums;text-align:right;padding:0 8px 0 0;
+    outline:none;color:inherit;-moz-appearance:textfield}
+  .twk-num input::-webkit-inner-spin-button,.twk-num input::-webkit-outer-spin-button{
+    -webkit-appearance:none;margin:0}
+  .twk-num-unit{padding-right:8px;color:rgba(41,38,27,.45)}
+
+  .twk-btn{appearance:none;height:26px;padding:0 12px;border:0;border-radius:7px;
+    background:rgba(0,0,0,.78);color:#fff;font:inherit;font-weight:500;cursor:default}
+  .twk-btn:hover{background:rgba(0,0,0,.88)}
+  .twk-btn.secondary{background:rgba(0,0,0,.06);color:inherit}
+  .twk-btn.secondary:hover{background:rgba(0,0,0,.1)}
+
+  .twk-swatch{appearance:none;-webkit-appearance:none;width:56px;height:22px;
+    border:.5px solid rgba(0,0,0,.1);border-radius:6px;padding:0;cursor:default;
+    background:transparent;flex-shrink:0}
+  .twk-swatch::-webkit-color-swatch-wrapper{padding:0}
+  .twk-swatch::-webkit-color-swatch{border:0;border-radius:5.5px}
+  .twk-swatch::-moz-color-swatch{border:0;border-radius:5.5px}
+
+  .twk-chips{display:flex;gap:6px}
+  .twk-chip{position:relative;appearance:none;flex:1;min-width:0;height:46px;
+    padding:0;border:0;border-radius:6px;overflow:hidden;cursor:default;
+    box-shadow:0 0 0 .5px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.06);
+    transition:transform .12s cubic-bezier(.3,.7,.4,1),box-shadow .12s}
+  .twk-chip:hover{transform:translateY(-1px);
+    box-shadow:0 0 0 .5px rgba(0,0,0,.18),0 4px 10px rgba(0,0,0,.12)}
+  .twk-chip[data-on="1"]{box-shadow:0 0 0 1.5px rgba(0,0,0,.85),
+    0 2px 6px rgba(0,0,0,.15)}
+  .twk-chip>span{position:absolute;top:0;bottom:0;right:0;width:34%;
+    display:flex;flex-direction:column;box-shadow:-1px 0 0 rgba(0,0,0,.1)}
+  .twk-chip>span>i{flex:1;box-shadow:0 -1px 0 rgba(0,0,0,.1)}
+  .twk-chip>span>i:first-child{box-shadow:none}
+  .twk-chip svg{position:absolute;top:6px;left:6px;width:13px;height:13px;
+    filter:drop-shadow(0 1px 1px rgba(0,0,0,.3))}
+`;
+
+// ── useTweaks ───────────────────────────────────────────────────────────────
+// Single source of truth for tweak values. setTweak persists via the host
+// (__edit_mode_set_keys → host rewrites the EDITMODE block on disk).
+function useTweaks(defaults) {
+  const [values, setValues] = React.useState(defaults);
+  // Accepts either setTweak('key', value) or setTweak({ key: value, ... }) so a
+  // useState-style call doesn't write a "[object Object]" key into the persisted
+  // JSON block.
+  const setTweak = React.useCallback((keyOrEdits, val) => {
+    const edits = typeof keyOrEdits === 'object' && keyOrEdits !== null
+      ? keyOrEdits : { [keyOrEdits]: val };
+    setValues((prev) => ({ ...prev, ...edits }));
+    window.parent.postMessage({ type: '__edit_mode_set_keys', edits }, '*');
+    // Same-window signal so in-page listeners (deck-stage rail thumbnails)
+    // can react — the parent message only reaches the host, not peers.
+    window.dispatchEvent(new CustomEvent('tweakchange', { detail: edits }));
+  }, []);
+  return [values, setTweak];
+}
+
+// ── TweaksPanel ─────────────────────────────────────────────────────────────
+// Floating shell. Registers the protocol listener BEFORE announcing
+// availability — if the announce ran first, the host's activate could land
+// before our handler exists and the toolbar toggle would silently no-op.
+// The close button posts __edit_mode_dismissed so the host's toolbar toggle
+// flips off in lockstep; the host echoes __deactivate_edit_mode back which
+// is what actually hides the panel.
+function TweaksPanel({ title = 'Tweaks', noDeckControls = false, children }) {
+  const [open, setOpen] = React.useState(false);
+  const dragRef = React.useRef(null);
+  // Auto-inject a rail toggle when a <deck-stage> is on the page. The
+  // toggle drives the deck's per-viewer _railVisible via window message;
+  // state is mirrored from the same localStorage key the deck reads so
+  // the control reflects reality across reloads. The mechanism is the
+  // message — authors who want custom placement can post it directly
+  // and pass noDeckControls to suppress this one.
+  const hasDeckStage = React.useMemo(
+    () => typeof document !== 'undefined' && !!document.querySelector('deck-stage'),
+    [],
+  );
+  // Hide the toggle until the host has actually enabled the rail (the
+  // __omelette_rail_enabled window message, posted only when the
+  // omelette_deck_rail_enabled flag is on for this user). The initial read
+  // covers TweaksPanel mounting after the message already arrived; the
+  // listener covers the common case of mounting first.
+  const [railEnabled, setRailEnabled] = React.useState(
+    () => hasDeckStage && !!document.querySelector('deck-stage')?._railEnabled,
+  );
+  React.useEffect(() => {
+    if (!hasDeckStage || railEnabled) return undefined;
+    const onMsg = (e) => {
+      if (e.data && e.data.type === '__omelette_rail_enabled') setRailEnabled(true);
+    };
+    window.addEventListener('message', onMsg);
+    return () => window.removeEventListener('message', onMsg);
+  }, [hasDeckStage, railEnabled]);
+  const [railVisible, setRailVisible] = React.useState(() => {
+    try { return localStorage.getItem('deck-stage.railVisible') !== '0'; } catch (e) { return true; }
+  });
+  const toggleRail = (on) => {
+    setRailVisible(on);
+    window.postMessage({ type: '__deck_rail_visible', on }, '*');
+  };
+  const offsetRef = React.useRef({ x: 16, y: 16 });
+  const PAD = 16;
+
+  const clampToViewport = React.useCallback(() => {
+    const panel = dragRef.current;
+    if (!panel) return;
+    const w = panel.offsetWidth, h = panel.offsetHeight;
+    const maxRight = Math.max(PAD, window.innerWidth - w - PAD);
+    const maxBottom = Math.max(PAD, window.innerHeight - h - PAD);
+    offsetRef.current = {
+      x: Math.min(maxRight, Math.max(PAD, offsetRef.current.x)),
+      y: Math.min(maxBottom, Math.max(PAD, offsetRef.current.y)),
+    };
+    panel.style.right = offsetRef.current.x + 'px';
+    panel.style.bottom = offsetRef.current.y + 'px';
+  }, []);
+
+  React.useEffect(() => {
+    if (!open) return;
+    clampToViewport();
+    if (typeof ResizeObserver === 'undefined') {
+      window.addEventListener('resize', clampToViewport);
+      return () => window.removeEventListener('resize', clampToViewport);
+    }
+    const ro = new ResizeObserver(clampToViewport);
+    ro.observe(document.documentElement);
+    return () => ro.disconnect();
+  }, [open, clampToViewport]);
+
+  React.useEffect(() => {
+    const onMsg = (e) => {
+      const t = e?.data?.type;
+      if (t === '__activate_edit_mode') setOpen(true);
+      else if (t === '__deactivate_edit_mode') setOpen(false);
+    };
+    window.addEventListener('message', onMsg);
+    window.parent.postMessage({ type: '__edit_mode_available' }, '*');
+    return () => window.removeEventListener('message', onMsg);
+  }, []);
+
+  const dismiss = () => {
+    setOpen(false);
+    window.parent.postMessage({ type: '__edit_mode_dismissed' }, '*');
+  };
+
+  const onDragStart = (e) => {
+    const panel = dragRef.current;
+    if (!panel) return;
+    const r = panel.getBoundingClientRect();
+    const sx = e.clientX, sy = e.clientY;
+    const startRight = window.innerWidth - r.right;
+    const startBottom = window.innerHeight - r.bottom;
+    const move = (ev) => {
+      offsetRef.current = {
+        x: startRight - (ev.clientX - sx),
+        y: startBottom - (ev.clientY - sy),
+      };
+      clampToViewport();
+    };
+    const up = () => {
+      window.removeEventListener('mousemove', move);
+      window.removeEventListener('mouseup', up);
+    };
+    window.addEventListener('mousemove', move);
+    window.addEventListener('mouseup', up);
+  };
+
+  if (!open) return null;
+  return (
+    <>
+      <style>{__TWEAKS_STYLE}</style>
+      <div ref={dragRef} className="twk-panel" data-noncommentable=""
+           style={{ right: offsetRef.current.x, bottom: offsetRef.current.y }}>
+        <div className="twk-hd" onMouseDown={onDragStart}>
+          <b>{title}</b>
+          <button className="twk-x" aria-label="Close tweaks"
+                  onMouseDown={(e) => e.stopPropagation()}
+                  onClick={dismiss}>✕</button>
+        </div>
+        <div className="twk-body">
+          {children}
+          {hasDeckStage && railEnabled && !noDeckControls && (
+            <TweakSection label="Deck">
+              <TweakToggle label="Thumbnail rail" value={railVisible} onChange={toggleRail} />
+            </TweakSection>
+          )}
+        </div>
+      </div>
+    </>
+  );
+}
+
+// ── Layout helpers ──────────────────────────────────────────────────────────
+
+function TweakSection({ label, children }) {
+  return (
+    <>
+      <div className="twk-sect">{label}</div>
+      {children}
+    </>
+  );
+}
+
+function TweakRow({ label, value, children, inline = false }) {
+  return (
+    <div className={inline ? 'twk-row twk-row-h' : 'twk-row'}>
+      <div className="twk-lbl">
+        <span>{label}</span>
+        {value != null && <span className="twk-val">{value}</span>}
+      </div>
+      {children}
+    </div>
+  );
+}
+
+// ── Controls ────────────────────────────────────────────────────────────────
+
+function TweakSlider({ label, value, min = 0, max = 100, step = 1, unit = '', onChange }) {
+  return (
+    <TweakRow label={label} value={`${value}${unit}`}>
+      <input type="range" className="twk-slider" min={min} max={max} step={step}
+             value={value} onChange={(e) => onChange(Number(e.target.value))} />
+    </TweakRow>
+  );
+}
+
+function TweakToggle({ label, value, onChange }) {
+  return (
+    <div className="twk-row twk-row-h">
+      <div className="twk-lbl"><span>{label}</span></div>
+      <button type="button" className="twk-toggle" data-on={value ? '1' : '0'}
+              role="switch" aria-checked={!!value}
+              onClick={() => onChange(!value)}><i /></button>
+    </div>
+  );
+}
+
+function TweakRadio({ label, value, options, onChange }) {
+  const trackRef = React.useRef(null);
+  const [dragging, setDragging] = React.useState(false);
+  // The active value is read by pointer-move handlers attached for the lifetime
+  // of a drag — ref it so a stale closure doesn't fire onChange for every move.
+  const valueRef = React.useRef(value);
+  valueRef.current = value;
+
+  // Segments wrap mid-word once per-segment width runs out. The track is
+  // ~248px (280 panel − 28 body pad − 4 seg pad), each button loses 12px
+  // to its own padding, and 11.5px system-ui averages ~6.3px/char — so 2
+  // options fit ~16 chars each, 3 fit ~10. Past that (or >3 options), fall
+  // back to a dropdown rather than wrap.
+  const labelLen = (o) => String(typeof o === 'object' ? o.label : o).length;
+  const maxLen = options.reduce((m, o) => Math.max(m, labelLen(o)), 0);
+  const fitsAsSegments = maxLen <= ({ 2: 16, 3: 10 }[options.length] ?? 0);
+  if (!fitsAsSegments) {
+    // <select> emits strings — map back to the original option value so the
+    // fallback stays type-preserving (numbers, booleans) like the segment path.
+    const resolve = (s) => {
+      const m = options.find((o) => String(typeof o === 'object' ? o.value : o) === s);
+      return m === undefined ? s : typeof m === 'object' ? m.value : m;
+    };
+    return <TweakSelect label={label} value={value} options={options}
+                        onChange={(s) => onChange(resolve(s))} />;
+  }
+  const opts = options.map((o) => (typeof o === 'object' ? o : { value: o, label: o }));
+  const idx = Math.max(0, opts.findIndex((o) => o.value === value));
+  const n = opts.length;
+
+  const segAt = (clientX) => {
+    const r = trackRef.current.getBoundingClientRect();
+    const inner = r.width - 4;
+    const i = Math.floor(((clientX - r.left - 2) / inner) * n);
+    return opts[Math.max(0, Math.min(n - 1, i))].value;
+  };
+
+  const onPointerDown = (e) => {
+    setDragging(true);
+    const v0 = segAt(e.clientX);
+    if (v0 !== valueRef.current) onChange(v0);
+    const move = (ev) => {
+      if (!trackRef.current) return;
+      const v = segAt(ev.clientX);
+      if (v !== valueRef.current) onChange(v);
+    };
+    const up = () => {
+      setDragging(false);
+      window.removeEventListener('pointermove', move);
+      window.removeEventListener('pointerup', up);
+    };
+    window.addEventListener('pointermove', move);
+    window.addEventListener('pointerup', up);
+  };
+
+  return (
+    <TweakRow label={label}>
+      <div ref={trackRef} role="radiogroup" onPointerDown={onPointerDown}
+           className={dragging ? 'twk-seg dragging' : 'twk-seg'}>
+        <div className="twk-seg-thumb"
+             style={{ left: `calc(2px + ${idx} * (100% - 4px) / ${n})`,
+                      width: `calc((100% - 4px) / ${n})` }} />
+        {opts.map((o) => (
+          <button key={o.value} type="button" role="radio" aria-checked={o.value === value}>
+            {o.label}
+          </button>
+        ))}
+      </div>
+    </TweakRow>
+  );
+}
+
+function TweakSelect({ label, value, options, onChange }) {
+  return (
+    <TweakRow label={label}>
+      <select className="twk-field" value={value} onChange={(e) => onChange(e.target.value)}>
+        {options.map((o) => {
+          const v = typeof o === 'object' ? o.value : o;
+          const l = typeof o === 'object' ? o.label : o;
+          return <option key={v} value={v}>{l}</option>;
+        })}
+      </select>
+    </TweakRow>
+  );
+}
+
+function TweakText({ label, value, placeholder, onChange }) {
+  return (
+    <TweakRow label={label}>
+      <input className="twk-field" type="text" value={value} placeholder={placeholder}
+             onChange={(e) => onChange(e.target.value)} />
+    </TweakRow>
+  );
+}
+
+function TweakNumber({ label, value, min, max, step = 1, unit = '', onChange }) {
+  const clamp = (n) => {
+    if (min != null && n < min) return min;
+    if (max != null && n > max) return max;
+    return n;
+  };
+  const startRef = React.useRef({ x: 0, val: 0 });
+  const onScrubStart = (e) => {
+    e.preventDefault();
+    startRef.current = { x: e.clientX, val: value };
+    const decimals = (String(step).split('.')[1] || '').length;
+    const move = (ev) => {
+      const dx = ev.clientX - startRef.current.x;
+      const raw = startRef.current.val + dx * step;
+      const snapped = Math.round(raw / step) * step;
+      onChange(clamp(Number(snapped.toFixed(decimals))));
+    };
+    const up = () => {
+      window.removeEventListener('pointermove', move);
+      window.removeEventListener('pointerup', up);
+    };
+    window.addEventListener('pointermove', move);
+    window.addEventListener('pointerup', up);
+  };
+  return (
+    <div className="twk-num">
+      <span className="twk-num-lbl" onPointerDown={onScrubStart}>{label}</span>
+      <input type="number" value={value} min={min} max={max} step={step}
+             onChange={(e) => onChange(clamp(Number(e.target.value)))} />
+      {unit && <span className="twk-num-unit">{unit}</span>}
+    </div>
+  );
+}
+
+// Relative-luminance contrast pick — checkmarks drawn over a swatch need to
+// read on both #111 and #fafafa without per-option configuration. Hex input
+// only (#rgb / #rrggbb); named or rgb()/hsl() colors fall through to "light".
+function __twkIsLight(hex) {
+  const h = String(hex).replace('#', '');
+  const x = h.length === 3 ? h.replace(/./g, (c) => c + c) : h.padEnd(6, '0');
+  const n = parseInt(x.slice(0, 6), 16);
+  if (Number.isNaN(n)) return true;
+  const r = (n >> 16) & 255, g = (n >> 8) & 255, b = n & 255;
+  return r * 299 + g * 587 + b * 114 > 148000;
+}
+
+const __TwkCheck = ({ light }) => (
+  <svg viewBox="0 0 14 14" aria-hidden="true">
+    <path d="M3 7.2 5.8 10 11 4.2" fill="none" strokeWidth="2.2"
+          strokeLinecap="round" strokeLinejoin="round"
+          stroke={light ? 'rgba(0,0,0,.78)' : '#fff'} />
+  </svg>
+);
+
+// TweakColor — curated color/palette picker. Each option is either a single
+// hex string or an array of 1-5 hex strings; the card adapts — a lone color
+// renders solid, a palette renders colors[0] as the hero (left ~2/3) with the
+// rest stacked in a sharp column on the right. onChange emits the
+// option in the shape it was passed (string stays string, array stays array).
+// Without options it falls back to the native color input for back-compat.
+function TweakColor({ label, value, options, onChange }) {
+  if (!options || !options.length) {
+    return (
+      <div className="twk-row twk-row-h">
+        <div className="twk-lbl"><span>{label}</span></div>
+        <input type="color" className="twk-swatch" value={value}
+               onChange={(e) => onChange(e.target.value)} />
+      </div>
+    );
+  }
+  // Native <input type=color> emits lowercase hex per the HTML spec, so
+  // compare case-insensitively. String() guards JSON.stringify(undefined),
+  // which returns the primitive undefined (no .toLowerCase).
+  const key = (o) => String(JSON.stringify(o)).toLowerCase();
+  const cur = key(value);
+  return (
+    <TweakRow label={label}>
+      <div className="twk-chips" role="radiogroup">
+        {options.map((o, i) => {
+          const colors = Array.isArray(o) ? o : [o];
+          const [hero, ...rest] = colors;
+          const sup = rest.slice(0, 4);
+          const on = key(o) === cur;
+          return (
+            <button key={i} type="button" className="twk-chip" role="radio"
+                    aria-checked={on} data-on={on ? '1' : '0'}
+                    aria-label={colors.join(', ')} title={colors.join(' · ')}
+                    style={{ background: hero }}
+                    onClick={() => onChange(o)}>
+              {sup.length > 0 && (
+                <span>
+                  {sup.map((c, j) => <i key={j} style={{ background: c }} />)}
+                </span>
+              )}
+              {on && <__TwkCheck light={__twkIsLight(hero)} />}
+            </button>
+          );
+        })}
+      </div>
+    </TweakRow>
+  );
+}
+
+function TweakButton({ label, onClick, secondary = false }) {
+  return (
+    <button type="button" className={secondary ? 'twk-btn secondary' : 'twk-btn'}
+            onClick={onClick}>{label}</button>
+  );
+}
+
+Object.assign(window, {
+  useTweaks, TweaksPanel, TweakSection, TweakRow,
+  TweakSlider, TweakToggle, TweakRadio, TweakSelect,
+  TweakText, TweakNumber, TweakColor, TweakButton,
+});
+
+</script>
+<script type="text/babel" data-presets="react">
+/* Shared small components */
+const { useEffect, useState, useRef, useMemo } = React;
+
+/* Brand B logomark inline SVG (matches the asset's geometry) */
+const LogoB = ({ className = "h-7 w-7" }) => (
+  <svg viewBox="0 0 100 100" className={className} aria-hidden="true">
+    <defs>
+      <linearGradient id="bg-dark" x1="0" x2="1" y1="0" y2="1">
+        <stop offset="0" stopColor="#321655" />
+        <stop offset="1" stopColor="#4B257F" />
+      </linearGradient>
+      <linearGradient id="bg-mid" x1="0" x2="1" y1="0" y2="0">
+        <stop offset="0" stopColor="#5E309C" />
+        <stop offset="1" stopColor="#6D48A8" />
+      </linearGradient>
+      <linearGradient id="bg-light" x1="0" x2="0" y1="0" y2="1">
+        <stop offset="0" stopColor="#B9A0DD" />
+        <stop offset="1" stopColor="#987AD1" />
+      </linearGradient>
+    </defs>
+    {/* dark wedge / spine */}
+    <path d="M22 8 L42 14 L42 92 L22 86 Z" fill="url(#bg-dark)" />
+    {/* light bowl */}
+    <path d="M42 14 C70 14 84 26 84 38 C84 50 72 56 56 56 L42 56 Z" fill="url(#bg-light)" />
+    {/* mid bowl */}
+    <path d="M42 50 C72 50 86 60 86 72 C86 84 72 92 56 92 L42 92 Z" fill="url(#bg-mid)" />
+    {/* highlight */}
+    <path d="M30 10 L40 12 L40 22 L26 18 Z" fill="rgba(255,255,255,0.18)" />
+  </svg>
+);
+
+const Wordmark = ({ className = "h-7" }) => (
+  <span className={"inline-flex items-center " + className}>
+    <img src="assets/wordmark.png" alt="Brand Layer" className="h-full w-auto select-none" draggable="false" />
+  </span>
+);
+
+const Pill = ({ children, tone = "light" }) => (
+  <span className={
+    "inline-flex items-center gap-2 rounded-full px-3 py-1 text-[12px] font-medium tracking-wide " +
+    (tone === "light"
+      ? "bg-white hairline text-ink/70"
+      : "bg-brand-700/15 text-brand-700 ring-1 ring-brand-500/25")
+  }>
+    {children}
+  </span>
+);
+
+const ArrowUR = ({ className = "h-4 w-4" }) => (
+  <svg viewBox="0 0 24 24" fill="none" className={className} stroke="currentColor" strokeWidth="2">
+    <path d="M7 17L17 7M9 7h8v8" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+/* Chevron (points left; rotate-180 for right) */
+const Chevron = ({ className = "h-5 w-5" }) => (
+  <svg viewBox="0 0 24 24" fill="none" className={className} stroke="currentColor" strokeWidth="2">
+    <path d="M15 6l-6 6 6 6" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+const ButtonPrimary = ({ children, onClick, className = "", ...rest }) => {
+  const magRef = window.useMagnetic ? window.useMagnetic(0.18, 120) : null;
+  return (
+    <button ref={magRef} onClick={onClick} {...rest} className={
+      "group relative inline-flex items-center gap-2 rounded-full bg-ink px-5 py-3 text-sm font-medium text-white shadow-[0_8px_30px_-10px_rgba(94,48,156,0.55)] ring-1 ring-white/10 transition-all hover:bg-brand-700 active:scale-[.98] " + className
+    }>
+      <span className="relative z-10">{children}</span>
+      <span className="relative z-10 grid h-5 w-5 place-items-center rounded-full bg-white/15 transition-transform group-hover:translate-x-0.5">
+        <ArrowUR className="h-3 w-3" />
+      </span>
+      <span className="pointer-events-none absolute inset-0 overflow-hidden rounded-full">
+        <span className="sweep absolute -inset-y-2 -left-1/3 w-1/3 -skew-x-12 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+      </span>
+    </button>
+  );
+};
+
+const ButtonGhost = ({ children, onClick, className = "" }) => (
+  <button onClick={onClick} className={
+    "inline-flex items-center gap-2 rounded-full bg-white/70 hairline px-5 py-3 text-sm font-medium text-ink transition-all hover:bg-white " + className
+  }>
+    {children}
+  </button>
+);
+
+/* Decorative B watermark for sections */
+const BMark = ({ className = "" , opacity = 0.05 }) => (
+  <img src="assets/logo.png" alt="" aria-hidden="true"
+    className={"pointer-events-none select-none " + className}
+    style={{ opacity }} draggable="false" />
+);
+
+/* Section Heading kit */
+const Eyebrow = ({ children }) => (
+  <div className="inline-flex items-center gap-2 rounded-full bg-white hairline px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-brand-700">
+    <span className="h-1.5 w-1.5 rounded-full bg-brand-500" />
+    {children}
+  </div>
+);
+
+const SectionTitle = ({ kicker, title, sub }) => (
+  <div className="mx-auto max-w-3xl text-center">
+    <Eyebrow>{kicker}</Eyebrow>
+    <h2 className="mt-5 text-balance text-[28px] font-bold leading-[1.05] tracking-[-0.02em] sm:text-[44px] lg:text-[56px]">{title}</h2>
+    {sub && <p className="mt-4 text-pretty text-[15px] sm:text-[17px] leading-relaxed text-ink/60">{sub}</p>}
+  </div>
+);
+
+/* Tiny SVG icons */
+const Icon = {
+  Sparkle: (p) => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" {...p}><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3z"/></svg>,
+  Bolt: (p) => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" {...p}><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" strokeLinejoin="round"/></svg>,
+  Cart: (p) => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" {...p}><path d="M3 4h2l2.4 12.2a2 2 0 002 1.6h8.6a2 2 0 002-1.6L21.5 8H6"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>,
+  Compass: (p) => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" {...p}><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5L13 13l-4.5 2.5L11 11l4.5-2.5z"/></svg>,
+  Pen: (p) => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" {...p}><path d="M3 21l4-1 11-11-3-3L4 17l-1 4z"/><path d="M14 6l3 3"/></svg>,
+  Rocket: (p) => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" {...p}><path d="M14 4s4 0 6 2 2 6 2 6-3 1-6 4-6 4-6 4-2-4-4-6-6-2-6-2 1-3 4-6 6-2 6-2 4 0 6 0z"/><circle cx="15.5" cy="8.5" r="1.5"/></svg>,
+  Code: (p) => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" {...p}><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></svg>,
+  Play: (p) => <svg viewBox="0 0 24 24" fill="currentColor" {...p}><path d="M8 5v14l11-7z"/></svg>,
+};
+
+Object.assign(window, { LogoB, Wordmark, Pill, ArrowUR, ButtonPrimary, ButtonGhost, BMark, Eyebrow, SectionTitle, Icon });
+
+</script>
+<script type="text/babel" data-presets="react">
+/* Major sections: Nav, Hero, Marquee, Services, Process, Work, CTA, Footer */
+const { useEffect: useEf, useState: useSt, useRef: useRf, useMemo: useMm } = React;
+
+/* ---------- BOOKING STATUS — auto quarter/year + per-quarter random count ----------
+   Quarter & year come from today's date and roll over on their own
+   (Q4 in Oct, then Q1 · 2027 on 1 Jan, and so on).
+   The project count is a random 1–3, rolled once per quarter and remembered
+   so it stays put on reload — it only re-rolls when a new quarter begins. */
+const bookingStatus = (() => {
+  const now = new Date();
+  const q = Math.floor(now.getMonth() / 3) + 1;   // 1–4
+  const year = now.getFullYear();
+  const key = year + '-Q' + q;
+
+  let count;
+  try {
+    const saved = JSON.parse(localStorage.getItem('bl-booking') || '{}');
+    if (saved.key === key && saved.count >= 1 && saved.count <= 3) {
+      count = saved.count;                          // same quarter → keep the number
+    } else {
+      count = Math.floor(Math.random() * 3) + 1;    // new quarter → roll 1, 2 or 3
+      localStorage.setItem('bl-booking', JSON.stringify({ key: key, count: count }));
+    }
+  } catch (e) {
+    count = Math.floor(Math.random() * 3) + 1;      // storage blocked → just roll
+  }
+
+  return {
+    quarter: 'Q' + q + ' · ' + year,
+    projects: count + ' project' + (count === 1 ? '' : 's'),
+  };
+})();
+
+/* ---------- NAV ---------- */
+function Nav() {
+  const [open, setOpen] = useSt(false);
+  const links = ['Services', 'Work', 'Process'];
+  const navAnchor = (l) => l.toLowerCase();
+
+  return (
+    <>
+      <div className="pointer-events-none fixed inset-x-0 top-0 z-50 flex justify-center">
+        <div className="pointer-events-auto mt-5 w-[min(96%,1280px)]">
+          <div className="flex items-center justify-between rounded-full glass hairline-strong px-5 py-3">
+            <a href="#top" aria-label="Brand Layer — back to top" className="flex items-center gap-2">
+              <Wordmark className="h-10" />
+            </a>
+            <nav className="hidden items-center gap-1 text-sm md:flex">
+              {links.map(l => (
+                <a key={l} href={"#" + navAnchor(l)} className="rounded-full px-3.5 py-2 text-ink/70 transition hover:bg-white hover:text-ink">{l}</a>
+              ))}
+              <a href="cv.html" className="rounded-full px-3.5 py-2 text-ink/70 transition hover:bg-white hover:text-ink">CV</a>
+            </nav>
+            <div className="flex items-center gap-2">
+              <a href="#contact" className="hidden text-sm px-3 text-ink/70 hover:text-ink sm:inline-block">Contact</a>
+              <ButtonPrimary className="hidden md:inline-flex" onClick={() => document.getElementById('contact')?.scrollIntoView({behavior:'smooth'})}>Start a project</ButtonPrimary>
+              <button
+                className={`md:hidden burger rounded-full hover:bg-black/5 transition${open ? ' is-open' : ''}`}
+                onClick={() => setOpen(o => !o)}
+                aria-label="Toggle menu"
+                aria-expanded={open}
+              >
+                <span className="burger__bar burger__bar--top" />
+                <span className="burger__bar burger__bar--mid" />
+                <span className="burger__bar burger__bar--bot" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={`mobile-menu fixed inset-0 z-40 flex flex-col bg-white px-6 pb-10 pt-24${open ? ' is-open' : ''}`}>
+        <nav className="flex flex-col gap-1">
+          {links.map(l => (
+            <a key={l} href={"#" + navAnchor(l)} onClick={() => setOpen(false)}
+              className="mobile-menu__item rounded-2xl px-4 py-4 text-[26px] font-semibold text-ink hover:bg-brand-50">
+              {l}
+            </a>
+          ))}
+          <a href="#contact" onClick={() => setOpen(false)}
+            className="mobile-menu__item rounded-2xl px-4 py-4 text-[26px] font-semibold text-ink hover:bg-brand-50">
+            Contact
+          </a>
+          <a href="cv.html" onClick={() => setOpen(false)}
+            className="mobile-menu__item rounded-2xl px-4 py-4 text-[26px] font-semibold text-ink hover:bg-brand-50">
+            CV
+          </a>
+        </nav>
+        <div className="mobile-menu__cta mt-auto pt-8">
+          <button
+            onClick={() => { setOpen(false); setTimeout(() => document.getElementById('contact')?.scrollIntoView({behavior:'smooth'}), 150); }}
+            className="w-full rounded-full bg-ink py-4 text-center text-[16px] font-medium text-white transition hover:bg-brand-700">
+            Start a project →
+          </button>
+        </div>
+      </div>
+    </>
+  );
+}
+
+/* ---------- HERO ---------- */
+function Hero() {
+  const introReady = window.useIntroReady ? window.useIntroReady() : true;
+  const CU = window.CountUp;
+
+  return (
+    <section className="relative isolate overflow-hidden pb-12 pt-40 sm:pb-24 sm:pt-48">
+      {/* hero backdrop */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-50/60 via-white to-white" />
+        <BMark className="absolute -bottom-[60px] -right-[60px] sm:-bottom-[100px] sm:-right-20 h-[340px] w-[340px] sm:h-[560px] sm:w-[560px] lg:hidden" opacity={0.07} />
+        <img
+          src="assets/pngbackround.png"
+          alt=""
+          aria-hidden="true"
+          className="hero-png-enter pointer-events-none select-none absolute bottom-0 right-0 hidden lg:block lg:w-[92%] max-w-[1280px]"
+          style={{
+            maskImage: 'linear-gradient(to top left, black 70%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(to top left, black 70%, transparent 100%)',
+          }}
+        />
+      </div>
+
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="grid items-center gap-12 lg:grid-cols-12">
+          {/* LEFT */}
+          <div className="lg:col-span-8">
+            <div data-reveal style={{ '--i': 0 }}>
+              <Pill tone="brand">
+                <span className="h-1.5 w-1.5 rounded-full bg-brand-600 pulse-dot" />
+                Available for work
+              </Pill>
+            </div>
+            <h1 data-reveal style={{ '--i': 1 }} className="mt-6 text-balance text-[34px] font-medium leading-[1.0] tracking-[-0.025em] sm:text-[56px] lg:text-[76px] xl:text-[84px]">
+              Lead your business with intention.
+            </h1>
+            <p data-reveal style={{ '--i': 2 }} className="mt-6 max-w-xl text-pretty text-[15px] sm:text-[17px] leading-relaxed text-ink/65">
+              We don't do generic. We build websites that work as hard as you do, engineered with modern tools (Next.js, Vercel) and the <em className="not-italic font-medium text-ink/85">shokunin spirit</em> of precision.
+            </p>
+            <div data-reveal style={{ '--i': 3 }} className="mt-8 flex flex-wrap items-center gap-3">
+              <ButtonPrimary onClick={() => document.getElementById('contact')?.scrollIntoView({behavior:'smooth'})}>Book a free 15-min call</ButtonPrimary>
+            </div>
+            <div data-reveal style={{ '--i': 4 }} className="mt-10 flex items-center gap-6 text-[13px] text-ink/55">
+              <div className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                <span><b className="text-ink">Booking {bookingStatus.projects}</b> for {bookingStatus.quarter}</span>
+              </div>
+              <div className="hidden h-4 w-px bg-ink/15 sm:block" />
+              <div className="hidden sm:block">Independent studio · <b className="text-ink">Drammen, Norway</b></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- MARQUEE ---------- */
+function TrustedMarquee() {
+  const tools = [
+    { name: 'Claude', src: 'assets/AppsLogos/Claude.png', url: 'https://claude.ai' },
+    { name: 'Codex', src: 'assets/AppsLogos/Codex.png', url: 'https://chatgpt.com' },
+    { name: 'GitHub', src: 'assets/AppsLogos/GitHub.png', url: 'https://github.com' },
+    { name: 'Next.js', src: 'assets/AppsLogos/NEXT.js.png', url: 'https://nextjs.org' },
+    { name: 'Vercel', src: 'assets/AppsLogos/Vercel.png', url: 'https://vercel.com' },
+    { name: 'VS Code', src: 'assets/AppsLogos/VS Code.png', url: 'https://code.visualstudio.com' },
+  ];
+  const row = [...tools, ...tools];
+  useEf(() => {
+    const el = document.getElementById('trusted-marquee');
+    if (!el || document.getElementById('brand-intro')?.classList.contains('lifted')) { if (el) el.classList.add('is-visible'); return; }
+    const onLift = () => el.classList.add('is-visible');
+    window.addEventListener('brand:intro-lifted', onLift);
+    return () => window.removeEventListener('brand:intro-lifted', onLift);
+  }, []);
+  return (
+    <section id="trusted-marquee" className="marquee-reveal relative -mt-4 border-y border-ink/5 bg-white/60 py-5 backdrop-blur">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="flex items-center gap-6">
+          <span className="shrink-0 text-[11px] uppercase tracking-[0.22em] text-ink/45 hidden sm:block">Our tools</span>
+          <div className="relative flex-1 overflow-hidden" style={{ maskImage: 'linear-gradient(90deg, transparent, black 8%, black 92%, transparent)' }}>
+            <div className="marquee-track flex w-max items-center gap-16">
+              {row.map((tool, i) => (
+                <a key={i} href={tool.url} target="_blank" rel="noopener noreferrer" className="inline-flex">
+                  <img src={tool.src} alt={tool.name} className="h-8 w-auto object-contain opacity-60 transition hover:opacity-100 hover:scale-110" />
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- SERVICES with animated mini-cards ---------- */
+function Services() {
+  return (
+    <section id="services" className="relative py-14 sm:py-28">
+      <BMark className="absolute -right-24 top-10 h-[420px] w-[420px]" opacity={0.04} />
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end" data-reveal>
+          <div className="max-w-2xl">
+            <Eyebrow>What we build</Eyebrow>
+            <h2 className="mt-5 text-balance text-[30px] font-bold leading-[1.05] tracking-[-0.02em] sm:text-[44px] lg:text-[64px]">
+              Services built to drive impact
+            </h2>
+          </div>
+          <p className="max-w-sm text-pretty text-[15px] leading-relaxed text-ink/60">
+            We are a small studio. We say no to most projects so the ones we take ship without compromise.
+          </p>
+        </div>
+
+        <ServicesCarousel />
+
+        <CraftBand />
+      </div>
+    </section>
+  );
+}
+
+const SERVICES = [
+  {
+    n: '01',
+    kicker: 'WEBSITE',
+    title: 'Sites that pay rent.',
+    body: 'We build fast, SEO-optimized websites with clear messaging and conversion-focused design that helps turn visitors into customers.',
+    panel: 'code',
+  },
+  {
+    n: '02',
+    kicker: 'UI/UX DESIGN',
+    title: 'Apps developed specifically for you',
+    body: 'Crafting intuitive, user-centered interfaces that blend clarity, beauty, and effortless interaction.',
+    tags: ['case-study', 'CMS', 'image-pipeline', 'password-gates'],
+    panel: 'app',
+  },
+  {
+    n: '03',
+    kicker: 'BRANDING & IDENTITY',
+    title: 'Logos, palettes, and visual worlds.',
+    body: "We create branding that truly lives and breathes your identity. From designing memorable logos to crafting cohesive color palettes and typography, we ensure every element reflects your brand's personality. We also develop mockups and other visual assets.",
+    panel: 'brand',
+  },
+];
+
+function CarouselArrow({ dir, onClick, className = "" }) {
+  const prev = dir === 'prev';
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label={prev ? 'Previous service' : 'Next service'}
+      className={"grid h-11 w-11 shrink-0 place-items-center rounded-full bg-white text-ink/70 hairline transition-all hover:-translate-y-0.5 hover:bg-brand-50 hover:text-brand-700 active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-700 " + className}
+    >
+      <Chevron className={"h-5 w-5 " + (prev ? "" : "rotate-180")} />
+    </button>
+  );
+}
+
+function ServicesCarousel() {
+  const n = SERVICES.length;
+  const [index, setIndex] = React.useState(0);
+  const slideRefs = React.useRef([]);
+  const drag = React.useRef(null);      // live touch-drag state
+  const dragExit = React.useRef(null);  // set on swipe-commit so the exit continues the finger's motion
+  const dir = React.useRef(1);          // last nav direction: +1 forward, -1 back
+  const prevIndex = React.useRef(0);    // the slide we're leaving
+  const inited = React.useRef(false);
+
+  const [stageH, setStageH] = React.useState();
+
+  const go = React.useCallback((delta) => {
+    dir.current = delta > 0 ? 1 : -1;
+    setIndex((p) => (p + delta + n) % n);
+  }, [n]);
+  const jump = React.useCallback((i) => {
+    setIndex((p) => { if (i !== p) dir.current = i > p ? 1 : -1; return i; });
+  }, []);
+
+  // Sequential directional swap (no overlap): the leaving slide slides + fades OUT first,
+  // and the entering slide stays fully hidden until it's gone, then slides + fades IN. Because
+  // the enter is delayed until the exit finishes, the two cards are never both visible at once.
+  React.useLayoutEffect(() => {
+    const OFF = 48;                                      // drift distance (px)
+    const EXIT_MS = 200;                                 // outgoing card leaves first
+    const ENTER_MS = 200;                                // incoming card arrives after it's gone
+    const EASE = 'ease-in-out';
+    let enterFrom = dir.current === 1 ? -OFF :  OFF;     // next → from left,  prev → from right
+    let exitTo    = dir.current === 1 ?  OFF : -OFF;     // next → to right,   prev → to left
+    if (dragExit.current) {
+      // Swipe-commit: the card keeps travelling the way the finger flicked it,
+      // and the next one enters from the opposite side.
+      const sign = dragExit.current.dx < 0 ? -1 : 1;
+      exitTo = sign * Math.max(Math.abs(dragExit.current.dx) + OFF, OFF);
+      enterFrom = -sign * OFF;
+      dragExit.current = null;
+    }
+    const from = prevIndex.current;
+    slideRefs.current.forEach((el, i) => {
+      if (!el) return;
+      if (i === index) {
+        el.style.zIndex = '1';
+        el.style.pointerEvents = 'auto';
+        if (!inited.current) {                 // first paint: show it, no entry motion
+          el.style.transition = 'none';
+          el.style.opacity = '1';
+          el.style.transform = 'translateX(0)';
+        } else {                               // enter only AFTER the old card has left
+          el.style.transition = 'none';
+          el.style.opacity = '0';              // stay hidden through the whole exit phase…
+          el.style.transform = `translateX(${enterFrom}px)`;
+          void el.offsetWidth;                 // commit the hidden start state
+          el.style.transition =
+            `transform ${ENTER_MS}ms ${EASE} ${EXIT_MS}ms, opacity ${ENTER_MS}ms ${EASE} ${EXIT_MS}ms`;
+          el.style.opacity = '1';              // …then slide + fade into place
+          el.style.transform = 'translateX(0)';
+        }
+      } else if (i === from && inited.current) {
+        el.style.zIndex = '0';
+        el.style.pointerEvents = 'none';
+        el.style.transition =
+          `transform ${EXIT_MS}ms ${EASE}, opacity ${EXIT_MS}ms ${EASE}`;
+        el.style.opacity = '0';                // leave first: slide + fade out immediately
+        el.style.transform = `translateX(${exitTo}px)`;
+      } else {
+        el.style.zIndex = '0';
+        el.style.pointerEvents = 'none';
+        el.style.transition = 'none';
+        el.style.opacity = '0';                // idle slides parked and hidden
+        el.style.transform = `translateX(${enterFrom}px)`;
+      }
+    });
+    prevIndex.current = index;
+    inited.current = true;
+  }, [index]);
+
+  // Animate the stage to the active slide's height (tracks font/image/resize via RO).
+  React.useLayoutEffect(() => {
+    const el = slideRefs.current[index];
+    if (!el) return;
+    const update = () => setStageH(el.offsetHeight);
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [index]);
+
+  // Focus management: inactive slides are inert (not focusable / hidden from AT).
+  React.useEffect(() => {
+    slideRefs.current.forEach((el, i) => { if (el) el.inert = i !== index; });
+  }, [index]);
+
+  // Mobile/tablet (<lg): give every slide's copy block the height of the tallest one,
+  // so the visual below it sits at a fixed position no matter which service is active.
+  const measureCopy = React.useCallback(() => {
+    const copies = slideRefs.current.map((el) => el && el.querySelector('.svc-copy')).filter(Boolean);
+    copies.forEach((c) => { c.style.minHeight = ''; });
+    if (!window.matchMedia('(max-width: 1023.5px)').matches) return;
+    const max = Math.max(...copies.map((c) => c.offsetHeight));
+    copies.forEach((c) => { c.style.minHeight = max + 'px'; });
+  }, []);
+  React.useLayoutEffect(() => {
+    measureCopy();
+    window.addEventListener('resize', measureCopy);
+    let cancelled = false;
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { if (!cancelled) measureCopy(); });
+    return () => { cancelled = true; window.removeEventListener('resize', measureCopy); };
+  }, [measureCopy]);
+
+  const onKeyDown = (e) => {
+    if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }
+    else if (e.key === 'ArrowRight') { e.preventDefault(); go(1); }
+  };
+
+  /* Touch: drag-follow swipe. The active card tracks the finger; on release it either
+     commits (distance or flick velocity) and hands off to the exit animation, or springs
+     back. Mouse keeps the simple release-threshold swipe. Vertical intent is handed to
+     the browser (touchAction: pan-y) untouched. */
+  const onPointerDown = (e) => {
+    drag.current = {
+      x: e.clientX, y: e.clientY, t: performance.now(), id: e.pointerId,
+      touch: e.pointerType !== 'mouse', engaged: false, scrolling: false, dx: 0, vx: 0,
+    };
+  };
+  const onPointerMove = (e) => {
+    const d = drag.current;
+    if (!d || !d.touch || d.scrolling) return;
+    const dx = e.clientX - d.x, dy = e.clientY - d.y;
+    if (!d.engaged) {
+      if (Math.abs(dy) > 10 && Math.abs(dy) > Math.abs(dx)) { d.scrolling = true; return; }
+      if (Math.abs(dx) < 10) return;
+      d.engaged = true;
+      try { e.currentTarget.setPointerCapture(d.id); } catch (err) {}
+      const el = slideRefs.current[index];
+      if (el) el.style.transition = 'none';
+    }
+    const now = performance.now();
+    d.vx = (dx - d.dx) / Math.max(now - (d.lastT || d.t), 1);
+    d.dx = dx; d.lastT = now;
+    const el = slideRefs.current[index];
+    if (el) el.style.transform = `translateX(${dx * 0.9}px)`;
+  };
+  const finishDrag = (e, cancelled) => {
+    const d = drag.current; drag.current = null;
+    if (!d) return;
+    if (d.engaged) {
+      const el = slideRefs.current[index];
+      const flick = Math.abs(d.dx) > 24 && Math.abs(d.vx) > 0.5 && (d.vx < 0) === (d.dx < 0);
+      if (!cancelled && (Math.abs(d.dx) > 64 || flick)) {
+        dragExit.current = { dx: d.dx * 0.9 };
+        go(d.dx < 0 ? 1 : -1);
+      } else if (el) {
+        el.style.transition = 'transform 260ms cubic-bezier(.2,.7,.2,1)';
+        el.style.transform = 'translateX(0)';
+      }
+      return;
+    }
+    if (cancelled || d.touch) return;
+    const dx = e.clientX - d.x, dy = e.clientY - d.y;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) go(dx < 0 ? 1 : -1);
+  };
+
+  const cur = SERVICES[index];
+
+  return (
+    <div className="reveal-rise mt-12 sm:mt-16" role="group" aria-roledescription="carousel" aria-label="Services" onKeyDown={onKeyDown} data-reveal>
+      {/* Stage: desktop arrows flank the card */}
+      <div className="flex items-center gap-3 sm:gap-6">
+        <CarouselArrow dir="prev" onClick={() => go(-1)} className="hidden sm:grid" />
+        <div
+          className="svc-stage relative min-w-0 flex-1"
+          style={{ touchAction: 'pan-y', height: stageH }}
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={(e) => finishDrag(e, false)}
+          onPointerCancel={(e) => finishDrag(e, true)}
+        >
+          {SERVICES.map((s, i) => (
+            <div
+              key={i}
+              ref={(el) => (slideRefs.current[i] = el)}
+              className="svc-slide absolute inset-x-0 top-0"
+            >
+              <ServiceRow {...s} />
+            </div>
+          ))}
+        </div>
+        <CarouselArrow dir="next" onClick={() => go(1)} className="hidden sm:grid" />
+      </div>
+
+      {/* Controls: dots centered (both), arrows flank them on mobile */}
+      <div className="mt-8 flex items-center justify-center gap-4 sm:mt-10">
+        <CarouselArrow dir="prev" onClick={() => go(-1)} className="grid sm:hidden" />
+        <div className="flex items-center gap-1">
+          {SERVICES.map((s, i) => (
+            <button
+              key={i}
+              type="button"
+              onClick={() => jump(i)}
+              aria-label={`Go to service ${i + 1}: ${s.title}`}
+              aria-current={i === index ? 'true' : undefined}
+              className="group grid h-11 place-items-center px-2"
+            >
+              <span className={"block h-2 rounded-full transition-all duration-300 " + (i === index ? "w-7 bg-brand-700" : "w-2 bg-ink/20 group-hover:bg-ink/40")} />
+            </button>
+          ))}
+        </div>
+        <CarouselArrow dir="next" onClick={() => go(1)} className="grid sm:hidden" />
+      </div>
+
+      <div aria-live="polite" className="sr-only">{`Service ${index + 1} of ${n}: ${cur.kicker} — ${cur.title}`}</div>
+    </div>
+  );
+}
+
+function ServiceRow({ n, kicker, title, body, tags, panel }) {
+  return (
+    <div className="grid grid-cols-1 items-center gap-8 py-4 sm:py-8 lg:grid-cols-12 lg:gap-12">
+      {/* text */}
+      <div className="svc-copy lg:col-span-6">
+        <div className="flex items-start justify-between gap-4">
+          <div className="inline-flex items-baseline gap-3">
+            <span className="font-mono text-[40px] sm:text-[52px] font-medium leading-none tracking-[-0.04em] text-ink/15">{n}</span>
+            <span className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-brand-700">
+              <span className="h-1.5 w-1.5 rounded-full bg-brand-500" /> {kicker}
+            </span>
+          </div>
+          <button
+            onClick={() => document.getElementById('work')?.scrollIntoView({behavior:'smooth'})}
+            aria-label="See selected work"
+            className="grid place-items-center h-9 w-9 shrink-0 rounded-full text-ink/35 transition hover:bg-ink/5 hover:text-ink hover:-translate-y-0.5 hover:translate-x-0.5"
+          >
+            <ArrowUR className="h-5 w-5" />
+          </button>
+        </div>
+        <h3 className="mt-6 text-[26px] sm:text-[36px] font-semibold leading-[1.08] tracking-[-0.02em]">{title}</h3>
+        <p className="mt-4 max-w-md text-pretty text-[15px] sm:text-[16px] leading-relaxed text-ink/60">{body}</p>
+        {tags && (
+          <div className="mt-6 flex flex-wrap gap-2 font-mono text-[11px] text-ink/55">
+            {tags.map((t) => <span key={t} className="rounded-full bg-ink/5 px-2.5 py-1">{t}</span>)}
+          </div>
+        )}
+      </div>
+
+      {/* visual */}
+      <div className="lg:col-span-6">
+        {panel === 'app' ? <AppWindow /> : panel === 'brand' ? <BrandWindow /> : <CodeWindow />}
+      </div>
+    </div>
+  );
+}
+
+/* Shared light "Mac window" frame used by all three service visuals */
+function Window({ file, pill, pillTone = 'emerald', children }) {
+  const toneCls = pillTone === 'brand'
+    ? 'bg-brand-500/10 text-brand-700'
+    : 'bg-emerald-500/10 text-emerald-700';
+  return (
+    <div aria-hidden="true" className="relative flex aspect-[4/3] sm:aspect-[16/10] flex-col overflow-hidden rounded-lg bg-white hairline-strong shadow-[0_24px_60px_-45px_rgba(50,22,85,0.4)]">
+      {/* title bar */}
+      <div className="flex shrink-0 items-center gap-2 border-b border-ink/[0.06] px-4 py-3">
+        <span className="group/dots flex items-center gap-2">
+          <span className="h-3 w-3 rounded-full bg-ink/[0.12] transition-colors duration-150 group-hover/dots:bg-[#ff5f56]" />
+          <span className="h-3 w-3 rounded-full bg-ink/[0.12] transition-colors duration-150 group-hover/dots:bg-[#febc2e]" />
+          <span className="h-3 w-3 rounded-full bg-ink/[0.12] transition-colors duration-150 group-hover/dots:bg-[#28c840]" />
+        </span>
+        <span className="ml-3 truncate font-mono text-[11px] text-ink/45">{file}</span>
+        {pill && <span className={"ml-auto shrink-0 rounded-full px-2 py-0.5 font-mono text-[10px] " + toneCls}>{pill}</span>}
+      </div>
+      <div className="min-h-0 flex-1">{children}</div>
+    </div>
+  );
+}
+
+function CodeWindow() {
+  const P = "text-ink/35";          // brackets / punctuation
+  const TAG = "text-brand-700";     // tag names
+  const ATR = "text-emerald-700";   // attribute names
+  const STR = "text-amber-600";     // strings
+  const TXT = "text-ink/80";        // text content
+
+  /* Desktop-only filler lines (cls: hidden sm:block) are excluded from the
+     caret cycle (hot) so the caret never lands on a line phones don't show. */
+  const lines = [
+    { cls: 'hidden sm:block', jsx: <span className={P}>{'<!DOCTYPE html>'}</span> },
+    { cls: 'hidden sm:block', jsx: <><span className={P}>{'<'}</span><span className={TAG}>meta</span> <span className={ATR}>charset</span><span className={P}>=</span><span className={STR}>"utf-8"</span><span className={P}>{'>'}</span></> },
+    { cls: 'hidden sm:block', jsx: <><span className={P}>{'<'}</span><span className={TAG}>title</span><span className={P}>{'>'}</span><span className={TXT}>Brand Layer</span><span className={P}>{'</'}</span><span className={TAG}>title</span><span className={P}>{'>'}</span></> },
+    { cls: 'italic text-ink/30', hot: true, jsx: <>{'<!-- ships fast · ranks well · converts -->'}</> },
+    { hot: true, jsx: <><span className={P}>{'<'}</span><span className={TAG}>section</span> <span className={ATR}>class</span><span className={P}>=</span><span className={STR}>"hero"</span><span className={P}>{'>'}</span></> },
+    { hot: true, jsx: <>{'  '}<span className={P}>{'<'}</span><span className={TAG}>h1</span><span className={P}>{'>'}</span><span className={TXT}>Sites that pay rent.</span><span className={P}>{'</'}</span><span className={TAG}>h1</span><span className={P}>{'>'}</span></> },
+    { hot: true, jsx: <>{'  '}<span className={P}>{'<'}</span><span className={TAG}>p</span><span className={P}>{'>'}</span><span className={TXT}>Fast, SEO-first, built to convert.</span><span className={P}>{'</'}</span><span className={TAG}>p</span><span className={P}>{'>'}</span></> },
+    { hot: true, jsx: <>{'  '}<span className={P}>{'<'}</span><span className={TAG}>a</span> <span className={ATR}>href</span><span className={P}>=</span><span className={STR}>"/start"</span><span className={P}>{'>'}</span><span className={TXT}>Start a project →</span><span className={P}>{'</'}</span><span className={TAG}>a</span><span className={P}>{'>'}</span></> },
+    { cls: 'hidden sm:block', jsx: <>{'  '}<span className={P}>{'<'}</span><span className={TAG}>a</span> <span className={ATR}>href</span><span className={P}>=</span><span className={STR}>"/call"</span><span className={P}>{'>'}</span><span className={TXT}>Book a free 15-min call</span><span className={P}>{'</'}</span><span className={TAG}>a</span><span className={P}>{'>'}</span></> },
+    { hot: true, jsx: <><span className={P}>{'</'}</span><span className={TAG}>section</span><span className={P}>{'>'}</span></> },
+  ];
+  const hot = lines.map((l, i) => (l.hot ? i : -1)).filter((i) => i >= 0);
+
+  // Start on the last hot line ('</section>') so reduced-motion users see the
+  // caret where it always used to sit; otherwise step through like an edit pass.
+  const [step, setStep] = React.useState(hot.length - 1);
+  React.useEffect(() => {
+    let reduced = false;
+    try { reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+    if (reduced) return;
+    const id = setInterval(() => setStep((s) => (s + 1) % hot.length), 1400);
+    return () => clearInterval(id);
+  }, []);
+  const active = hot[step];
+
+  return (
+    <Window file="index.html" pill="LCP 0.6s">
+      <div className="p-4 sm:p-5 font-mono text-[11px] sm:text-[12px] leading-[1.9]">
+        {lines.map((l, i) => (
+          <div key={i} className={"whitespace-pre -mx-1 rounded px-1 transition-colors duration-200 " + (l.cls || '') + (i === active ? ' bg-brand-50/80' : '')}>
+            {l.jsx}
+            {i === active && <span className="ml-1 inline-block h-[1.05em] w-[7px] translate-y-[2px] bg-brand-500/70 animate-pulse" />}
+          </div>
+        ))}
+      </div>
+    </Window>
+  );
+}
+
+function AppWindow() {
+  const bars = [42, 64, 50, 78, 58, 92, 70];
+  return (
+    <Window file="app.tsx" pill="60 fps">
+      <div className="flex h-full flex-col justify-between gap-4 p-5 sm:p-6">
+        {/* stats */}
+        <div className="flex items-start gap-10">
+          <div>
+            <div className="font-mono text-[9px] uppercase tracking-[0.18em] text-ink/40">Active users</div>
+            <div className="mt-2 text-[28px] sm:text-[32px] font-semibold leading-none tracking-[-0.03em] text-ink">2,481</div>
+            <div className="mt-1.5 font-mono text-[10px] text-emerald-700">▲ 12.4%</div>
+          </div>
+          <div>
+            <div className="font-mono text-[9px] uppercase tracking-[0.18em] text-ink/40">Retention</div>
+            <div className="mt-2 text-[28px] sm:text-[32px] font-semibold leading-none tracking-[-0.03em] text-ink">94%</div>
+            <div className="mt-1.5 font-mono text-[10px] text-emerald-700">▲ 3.1%</div>
+          </div>
+        </div>
+        {/* chart */}
+        <div className="min-h-0">
+          <div className="flex h-14 items-end gap-1.5 border-b border-ink/10 sm:h-20">
+            {bars.map((h, i) => (
+              <span key={i} className={"flex-1 rounded-t-sm " + (h === 92 ? "bg-brand-600" : "bg-brand-100")} style={{ height: h + '%' }} />
+            ))}
+          </div>
+          <div className="mt-2.5 flex items-center justify-between font-mono text-[9px] uppercase tracking-[0.18em] text-ink/35">
+            <span>Last 7 days</span>
+            <span className="text-emerald-700">● live</span>
+          </div>
+        </div>
+      </div>
+    </Window>
+  );
+}
+
+function BrandWindow() {
+  const swatches = ['#321655', '#5E309C', '#8259C5', '#B9A0DD', '#F4F0FB'];
+  return (
+    <Window file="identity.fig" pill="logo · color · type" pillTone="brand">
+      <div className="flex h-full flex-col justify-between gap-4 p-5 sm:p-6">
+        {/* logo lockup */}
+        <div className="flex items-center gap-3">
+          <div className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-brand-700 text-[16px] font-bold tracking-[-0.04em] text-white">B</div>
+          <div className="text-[16px] font-semibold tracking-[-0.03em] text-ink">Brand Layer</div>
+          <div className="ml-auto font-mono text-[9px] uppercase tracking-[0.18em] text-ink/35">Primary mark</div>
+        </div>
+        {/* type spec */}
+        <div className="flex items-end justify-between border-b border-ink/10 pb-3 sm:pb-4">
+          <div className="text-[38px] sm:text-[48px] font-bold leading-none tracking-[-0.04em] text-ink">Aa</div>
+          <div className="pb-0.5 text-right font-mono text-[10px] leading-relaxed text-ink/45">DM Sans<br />DM Mono</div>
+        </div>
+        {/* swatches */}
+        <div>
+          <div className="flex gap-2">
+            {swatches.map((c, i) => (
+              <span key={i} className="h-8 flex-1 rounded-md ring-1 ring-ink/[0.06]" style={{ background: c }} />
+            ))}
+          </div>
+          <div className="mt-2.5 flex items-center justify-between font-mono text-[9px] uppercase tracking-[0.18em] text-ink/35">
+            <span>Palette</span>
+            <span className="text-brand-700">Type scale</span>
+          </div>
+        </div>
+      </div>
+    </Window>
+  );
+}
+
+function CraftBand() {
+  const stats = [
+    { value: '<1s',  label: 'LCP target', sub: 'Largest Contentful Paint' },
+    { value: 'AA',   label: 'A11y',       sub: 'WCAG 2.2, designed in' },
+    { value: 'lean', label: 'JS budget',  sub: 'No bloated frameworks', cls: 'hidden sm:block' },
+  ];
+  const features = [
+    { ico: Icon.Bolt,    t: 'Sub-second loads', s: 'Avg LCP under 1s' },
+    { ico: Icon.Compass, t: 'WCAG 2.2 AA',      s: 'Accessibility by design' },
+    { ico: Icon.Play,    t: 'Custom motion',    s: 'CSS · Web Animations API' },
+    { ico: Icon.Code,    t: 'CI-baked',         s: 'Lighthouse on every deploy' },
+  ];
+  return (
+    <div data-reveal className="mt-16 border-t border-ink/10 pt-12 sm:mt-24 sm:pt-16">
+      <div className="grid gap-10 lg:grid-cols-12 lg:gap-12">
+        <div className="lg:col-span-5">
+          <div className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-brand-700">
+            <span className="font-mono">↳</span> The craft layer
+          </div>
+          <h3 className="mt-4 max-w-md text-[24px] sm:text-[32px] font-semibold leading-[1.1] tracking-[-0.02em]">Performance, accessibility, and motion — by default.</h3>
+          <div className="mt-8 flex flex-wrap gap-x-10 gap-y-6">
+            {stats.map((st) => (
+              <div key={st.label} className={st.cls}>
+                <div className="bg-gradient-to-br from-brand-900 to-brand-400 bg-clip-text text-[40px] font-semibold leading-none tracking-[-0.03em] text-transparent sm:text-[52px]">{st.value}</div>
+                <div className="mt-2 text-[12px] font-medium text-ink/80">{st.label}</div>
+                <div className="text-[12px] text-ink/45">{st.sub}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="lg:col-span-7 lg:border-l lg:border-ink/10 lg:pl-12">
+          {/* Phone keeps the compact icon-left list; sm+ upgrades each feature to a centered card */}
+          <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2 sm:gap-4">
+            {features.map((f) => (
+              <div key={f.t} className="flex items-start gap-3 sm:flex-col sm:items-center sm:justify-center sm:gap-3 sm:rounded-xl sm:bg-white sm:hairline sm:p-6 sm:text-center">
+                <span className="mt-0.5 grid h-9 w-9 shrink-0 place-items-center rounded-full bg-brand-50 text-brand-700 sm:mt-0">
+                  <f.ico className="h-4 w-4" />
+                </span>
+                <div>
+                  <div className="text-[15px] font-medium text-ink">{f.t}</div>
+                  <div className="text-[13px] text-ink/50 sm:mt-1">{f.s}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ---------- PROCESS ---------- */
+function Process() {
+  const steps = [
+    { n: '01', t: 'Strategy', sub: 'Discovery & positioning', body: 'A week sprint including interviews, competitor analysis, and content mapping. You leave with a written brief everyone agrees on.' },
+    { n: '02', t: 'Design', sub: 'Brand & interface', body: 'Designed and built in code from day one using real content, real typography, and reusable components. Every screen is created to feel finished from the start, not filled with placeholder text.' },
+    { n: '03', t: 'Deployment', sub: 'Build, ship, measure', body: 'Built on a fast, modern stack with analytics included from day one. We host and manage everything for you, keep the site running smoothly, and stay involved through a 30 day polish period after launch.' },
+  ];
+  return (
+    <section id="process" className="relative bg-gradient-to-b from-white to-brand-50/40 py-14 sm:py-28">
+      <div className="mx-auto max-w-7xl px-6">
+        <SectionTitle kicker="The process" title={<>We do it in three <span className="bg-gradient-to-r from-brand-700 to-brand-400 bg-clip-text text-transparent italic">steps.</span></>} sub="One small team, end-to-end. The same designer who sketches your hero is the engineer who deploys it." />
+
+        <div className="mx-auto mt-16 grid max-w-5xl gap-10 sm:mt-20 md:grid-cols-3 md:gap-8 lg:gap-14">
+          {steps.map((s, i) => (
+            <div key={s.n} data-reveal style={{ '--i': i }} className="border-t border-ink/10 pt-7">
+              <span className="block font-bold leading-none tracking-[-0.04em] text-[64px] sm:text-[80px]" style={{
+                background: 'linear-gradient(180deg, #321655 0%, #8259C5 60%, #B9A0DD 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}>{s.n}</span>
+              <div className="mt-5 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-brand-700">
+                <span className="h-1.5 w-1.5 rounded-full bg-brand-500" /> {s.sub}
+              </div>
+              <h3 className="mt-3 text-[24px] sm:text-[28px] font-bold tracking-[-0.02em]">{s.t}</h3>
+              <p className="mt-3 text-pretty text-[15px] leading-relaxed text-ink/65">{s.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- WORK / Collectible card stack ---------- */
+const PROJECTS = [
+  {
+    id: 'fdami',
+    type: 'App',
+    name: 'Fdami',
+    tag: 'iOS · Swift · faith companion',
+    year: 2024,
+    role: 'Full-stack iOS — A to Z',
+    scope: 'Planning, design, build, ship',
+    stack: 'Swift · SwiftUI',
+    live: null,
+    blurb: 'Fdami is a full-stack iOS application developed in Swift, designed to deliver a seamless and intuitive user experience from concept to final product. The project covers the entire development lifecycle — planning, coding, UI/UX design, testing, and optimization — demonstrating my ability to manage and execute an app development process from A to Z, integrating both technical and creative skills.',
+    features: [
+      'Prayer times',
+      'Notifications',
+      'Home-screen widgets',
+      'Compass for prayer direction',
+      'Fasting times and calendar',
+      'How-to-pray tutorials',
+    ],
+    cardImage: 'assets/work%20cards/card%201.png',
+    cardNoChrome: true,
+    images: [
+      { src: 'assets/My%20Work/Fdami%20-%20IOS%20Swift%20App/Imige1-Main.jpeg',          layout: 'hero' },
+      { src: 'assets/My%20Work/Fdami%20-%20IOS%20Swift%20App/Imige2-4by3.jpeg',          layout: 'wide' },
+      { src: 'assets/My%20Work/Fdami%20-%20IOS%20Swift%20App/Imige3-3by4.jpeg',          layout: 'portrait' },
+      { src: 'assets/My%20Work/Fdami%20-%20IOS%20Swift%20App/Imige4-16by9-Wiggets.jpeg', layout: 'widgets', caption: 'Home-screen widgets' },
+    ],
+  },
+  {
+    id: 'william',
+    type: 'Website',
+    name: 'William',
+    tag: 'Portfolio · video, photo, editing',
+    year: 2025,
+    role: 'Design + build',
+    scope: 'Portfolio website',
+    live: null,
+    blurb: 'A portfolio for William, who shoots video, takes photos, and edits his own work. He wanted the work up front and everything else out of the way. The landing screen stays quiet, just his name and what he does, then the works section switches to bold red with large type so projects read like a printed spread. Sets are grouped by place, like the Bangkok shoot, and the site runs on four pages: Home, Works, Services, and Contact.',
+    features: [
+      'Video and photo galleries',
+      'Projects grouped by location',
+      'Works, services, and contact',
+      'Image-first landing screen',
+      'Fast-loading full-bleed images',
+    ],
+    cardImage: 'assets/work%20cards/card%202.png',
+    cardNoChrome: true,
+    images: [
+      { src: 'assets/My%20Work/William%20-%20PhotoWEB/Imige1-Main.jpeg', layout: 'hero' },
+      { src: 'assets/My%20Work/William%20-%20PhotoWEB/Imige2-4by3.jpeg', layout: 'wide' },
+      { src: 'assets/My%20Work/William%20-%20PhotoWEB/Imige3-3by4.jpeg', layout: 'portrait' },
+      { src: 'assets/My%20Work/William%20-%20PhotoWEB/Imige4-%20Big.jpeg', layout: 'widgets', caption: 'Landing screen' },
+    ],
+  },
+  {
+    id: 'lander',
+    type: 'Ecommerce Landing Page',
+    name: 'LANDR',
+    tag: 'Ecommerce · snowboard and outdoor gear',
+    year: 2026,
+    role: 'Design + build',
+    scope: 'Shopify storefront',
+    live: null,
+    blurb: 'LANDR is premium outdoor gear from Niklas B. Lohne Hansen, a Paralympic para snowboarder and six-time Norwegian champion. He built the line around what he could not find in the shops, gear made for real cold and hard riding and tested in the conditions it is meant for. The brief was a single landing page that puts the story first and lets it carry the product, from snowboard gloves to the Recon tactical backpack. It leads with a full-bleed hero, moves into a clean product grid, and stays fast and sharp on a phone.',
+    features: [
+      'Story-first landing page',
+      'Full-bleed hero imagery',
+      'Clean product grid',
+      'Built on Shopify',
+      'Fast and mobile-first',
+    ],
+    cardImage: 'assets/work%20cards/card%203.png?v=2',
+    cardNoChrome: true,
+    images: [
+      { src: 'assets/My%20Work/Niklas%20-%20Lander/imige1-main.jpeg', layout: 'hero' },
+      { src: 'assets/My%20Work/Niklas%20-%20Lander/Imige2-4by3.jpeg', layout: 'wide' },
+      { src: 'assets/My%20Work/Niklas%20-%20Lander/Imige3-3by4.jpeg', layout: 'portrait' },
+      { src: 'assets/My%20Work/Niklas%20-%20Lander/Imige4-big.jpeg?v=2', layout: 'widgets', caption: 'The range' },
+    ],
+  },
+  {
+    id: 'brandlayer',
+    type: 'Brand identity',
+    name: 'Brand Layer',
+    tag: 'Identity system',
+    year: 2026,
+    role: 'Brand + build',
+    scope: 'Identity, web, studio',
+    live: 'brandlayer.no',
+    noHero: true,
+    blurb: 'Brand Layer is our own studio, so the identity had to earn its keep before we asked anyone else to trust theirs. It is built on one idea, that a brand is a stack of considered layers rather than a single logo. There is a clean B mark that reads at any size, a wordmark set in a precise grotesque, and a deep violet that stays calm next to loud client work. The system carries across the site, the deck, and social, and it is documented well enough to hold its line as the studio grows.',
+    features: [
+      'B mark and wordmark',
+      'Deep violet palette',
+      'Precise grotesque type',
+      'Site, deck, and social',
+      'Living brand guidelines',
+    ],
+    cardImage: 'assets/work%20cards/card%204.png',
+    cardNoChrome: true,
+    images: [
+      { src: 'assets/My%20Work/Brandlayer%20-%20Identey/Brand%20Layer%203_4%20Instagram.png', layout: 'half', frame: true },
+      { src: 'assets/My%20Work/Brandlayer%20-%20Identey/Black%20CCA%20Letterforms.png', layout: 'half', frame: true },
+    ],
+  },
+];
+
+/* Resting tilts (degrees) — alternating like cards tossed on a table */
+const REST_ROT = [-7, 5, -4, 6];
+/* Pre-toss rotation — exaggerated, eases toward rest as the card lands */
+const ENTRY_ROT = [22, -20, 24, -18];
+/* Slight horizontal & vertical settle offsets so the stack looks tossed, not perfectly aligned */
+const REST_DX = [-12, 8, -6, 10];   // in px (multiplied by zoom factor at runtime; small)
+const REST_DY = [4, -6, 8, -4];
+
+function Work() {
+  const outerRef = useRf(null);
+  const cardRefs = useRf([]);
+  const [openId, setOpenId] = useSt(null);
+  const [sourceRect, setSourceRect] = useSt(null);
+  const [activeIdx, setActiveIdx] = useSt(0);
+  const modalOpenRef = useRf(false);
+  const activeIdxRef = useRf(-1);
+
+  useEf(() => {
+    const outer = outerRef.current;
+    if (!outer) return;
+
+    const reduced = (() => { try { return matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { return false; } })();
+    if (reduced) {
+      cardRefs.current.forEach((el) => { if (el) { el.style.transform = ''; el.style.opacity = '1'; } });
+      return;
+    }
+
+    let raf = 0, active = false;
+    let isMobile = false;
+    const updateMobile = () => {
+      try { isMobile = matchMedia('(max-width: 1024px)').matches; } catch (e) { isMobile = false; }
+    };
+    updateMobile();
+
+    const N = PROJECTS.length;
+    const enterPerCard = 1 / N;             // 4 × 0.25 = 1.0 — cards span the full runway
+    const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+    const easeOut = (t) => 1 - Math.pow(1 - t, 3);
+
+    let current = 0, target = 0;            // smoothed global progress 0..1
+
+    const compute = () => {
+      const rect = outer.getBoundingClientRect();
+      const runway = outer.offsetHeight - window.innerHeight;
+      target = clamp(-rect.top / runway, 0, 1);
+    };
+
+    const applyCards = (p) => {
+      // Skip the 60Hz transform/state work while a modal covers the cards.
+      if (modalOpenRef.current) return;
+      let topIdx = 0;
+      cardRefs.current.forEach((el, i) => {
+        if (!el) return;
+        const enterStart = i * enterPerCard;
+        const enterEnd   = enterStart + enterPerCard * 0.85;
+
+        let tx = 0, ty = 0, rot = REST_ROT[i], op = 1;
+
+        if (p < enterStart) {
+          // off-stage
+          if (isMobile) { tx = 0; ty = 120; } else { tx = 120; ty = 0; }
+          rot = ENTRY_ROT[i];
+          op = 0;
+        } else if (p < enterEnd) {
+          // landing
+          const t = easeOut(clamp((p - enterStart) / (enterEnd - enterStart), 0, 1));
+          if (isMobile) { tx = 0; ty = (1 - t) * 120; }
+          else          { tx = (1 - t) * 120; ty = (1 - t) * -6; }
+          rot = ENTRY_ROT[i] + (REST_ROT[i] - ENTRY_ROT[i]) * t;
+          op = Math.min(1, t * 1.6);
+          topIdx = i;
+        } else {
+          // settled — stays put; section will unpin naturally with the page
+          tx = REST_DX[i] / 16;
+          ty = REST_DY[i] / 16;
+          rot = REST_ROT[i];
+          op = 1;
+          topIdx = i;
+        }
+
+        el.style.transform =
+          `translate3d(-50%, -50%, 0) translate3d(${tx}vw, ${ty}vh, 0) rotate(${rot.toFixed(2)}deg)`;
+        el.style.opacity = op.toFixed(3);
+        el.setAttribute('data-on-top', 'false');
+
+        // Only start loading the card's thumbnail PNG once the card actually
+        // begins to appear. Cards still off-stage (op === 0) never touch the
+        // network or decoder. Stops 11 MB of PNG decoding all at once when
+        // the section enters viewport.
+        if (op > 0.03) {
+          if (!el.__img) el.__img = el.querySelector('img.cstack-card__img');
+          const img = el.__img;
+          if (img && !img.src && img.dataset.src) img.src = img.dataset.src;
+        }
+      });
+
+      const top = cardRefs.current[topIdx];
+      if (top) top.setAttribute('data-on-top', 'true');
+      if (topIdx !== activeIdxRef.current) {
+        activeIdxRef.current = topIdx;
+        setActiveIdx(topIdx);
+      }
+    };
+
+    const tick = () => {
+      raf = 0;
+      if (modalOpenRef.current) return;
+      current += (target - current) * 0.14;
+      const stable = Math.abs(target - current) < 0.0005;
+      if (stable) current = target;
+      applyCards(current);
+      // Stop the rAF once the smoothed scroll settles; resume on the next scroll/resize.
+      if (active && !stable) raf = requestAnimationFrame(tick);
+    };
+    const kick = () => {
+      if (active && raf === 0 && !modalOpenRef.current) raf = requestAnimationFrame(tick);
+    };
+
+    const onScroll = () => { compute(); kick(); };
+    const onResize = () => { updateMobile(); compute(); kick(); };
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (!active) { active = true; compute(); kick(); }
+        } else {
+          active = false;
+          if (raf) { cancelAnimationFrame(raf); raf = 0; }
+        }
+      });
+    }, { rootMargin: '0px', threshold: 0 });
+
+    io.observe(outer);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onResize);
+    compute();
+    applyCards(current);
+
+    return () => {
+      io.disconnect();
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onResize);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
+
+  const openProject = React.useCallback((id, sourceEl) => {
+    if (sourceEl) {
+      const r = sourceEl.getBoundingClientRect();
+      setSourceRect({ left: r.left, top: r.top, width: r.width, height: r.height });
+    } else {
+      setSourceRect(null);
+    }
+    modalOpenRef.current = true;
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    document.body.style.overflow = 'hidden';
+    if (scrollbarWidth > 0) document.body.style.paddingRight = `${scrollbarWidth}px`;
+    setOpenId(id);
+  }, []);
+  const closeModal = React.useCallback(() => {
+    modalOpenRef.current = false;
+    document.body.style.overflow = '';
+    document.body.style.paddingRight = '';
+    const wrap = document.querySelector('.work-modal');
+    const card = wrap?.querySelector('.work-modal__card');
+    const reduced = (() => { try { return matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { return false; } })();
+    if (wrap && card && sourceRect && !reduced) {
+      const liveSourceEl = openId ? document.querySelector(`.cstack-card[data-project-id="${openId}"]`) : null;
+      const live = liveSourceEl ? liveSourceEl.getBoundingClientRect() : sourceRect;
+      const destRect = card.getBoundingClientRect();
+      const sx = live.width  / destRect.width;
+      const sy = live.height / destRect.height;
+      const tx = live.left - destRect.left;
+      const ty = live.top  - destRect.top;
+      card.style.transform = `translate(${tx}px, ${ty}px) scale(${sx}, ${sy})`;
+      card.style.opacity = '0';
+    }
+    if (wrap) wrap.classList.remove('is-open');
+    setTimeout(() => { setOpenId(null); setSourceRect(null); }, 440);
+  }, [openId, sourceRect]);
+  const nextProject = React.useCallback(() => {
+    setSourceRect(null);
+    setOpenId(prev => {
+      const idx = PROJECTS.findIndex(p => p.id === prev);
+      return PROJECTS[(idx + 1) % PROJECTS.length].id;
+    });
+  }, []);
+
+  const project = PROJECTS.find(p => p.id === openId) || null;
+  const nextProjectName = (() => {
+    if (!project) return null;
+    const idx = PROJECTS.findIndex(p => p.id === project.id);
+    return PROJECTS[(idx + 1) % PROJECTS.length].name;
+  })();
+  const cardRefCallbacks = useMm(() => PROJECTS.map((_, i) => (el) => { cardRefs.current[i] = el; }), []);
+  const openCallbacks = useMm(() => PROJECTS.map((p, i) => () => openProject(p.id, cardRefs.current[i])), []);
+
+  return (
+    <>
+      <section id="work" ref={outerRef} className="cstack-outer" style={{ height: '360vh' }}>
+        <div className="cstack-sticky">
+          <div className="cstack-hdr" data-reveal>
+            <div>
+              <Eyebrow>Selected work</Eyebrow>
+              <h2 className="mt-5 max-w-2xl text-balance text-[30px] font-bold leading-[1.05] tracking-[-0.02em] sm:text-[44px] lg:text-[60px]">
+                Receipts.<span className="text-ink/30"> Not deliverables.</span>
+              </h2>
+            </div>
+            <div className="hidden md:flex items-center gap-3 text-[12px] font-mono uppercase tracking-[0.18em] text-ink/45">
+              <span>{String(activeIdx + 1).padStart(2, '0')}</span>
+              <span className="h-px w-8 bg-ink/15" />
+              <span>{String(PROJECTS.length).padStart(2, '0')}</span>
+            </div>
+          </div>
+
+          <div className="cstack-stage">
+            {PROJECTS.map((p, i) => (
+              <WorkCard
+                key={p.id}
+                ref={cardRefCallbacks[i]}
+                project={p}
+                index={i}
+                onOpen={openCallbacks[i]}
+              />
+            ))}
+          </div>
+
+          <div className="cstack-rail">
+            <div className="cstack-dots">
+              {PROJECTS.map((p, i) => (
+                <span key={p.id} className="dot" data-active={i === activeIdx ? 'true' : 'false'} />
+              ))}
+            </div>
+            <div className="cstack-hint">
+              <span>Scroll</span>
+              <svg className="cstack-hint__arrow" width="22" height="10" viewBox="0 0 22 10" fill="none">
+                <path d="M0 5H20M20 5L16 1M20 5L16 9" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+      <WorkModal project={project} sourceRect={sourceRect} nextProjectName={nextProjectName} onClose={closeModal} onNext={nextProject} />
+    </>
+  );
+}
+
+const WorkCard = React.forwardRef(function WorkCard({ project, index, onOpen }, ref) {
+  const onKey = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onOpen(); }
+  };
+  return (
+    <div
+      ref={ref}
+      role="button"
+      tabIndex={0}
+      onClick={onOpen}
+      onKeyDown={onKey}
+      aria-label={`Open case study: ${project.name}`}
+      className="cstack-card"
+      data-project-id={project.id}
+      style={{ zIndex: index + 1 }}
+    >
+      <img className="cstack-card__img" data-src={project.cardImage} alt="" draggable="false" decoding="async" />
+      {!project.cardNoChrome && (
+        <div className="cstack-card__chrome">
+          <div className="cstack-card__top">
+            <span className="cstack-card__pill">{project.type}</span>
+            <span className="cstack-card__case">case {String(index + 1).padStart(2, '0')}</span>
+          </div>
+          <div className="cstack-card__bot">
+            <div className="cstack-card__name">{project.name}</div>
+            <div className="cstack-card__tag">{project.tag}</div>
+          </div>
+        </div>
+      )}
+      <div className="cstack-card__cta">View case <ArrowUR className="h-3 w-3" /></div>
+    </div>
+  );
+});
+
+function WorkModal({ project, sourceRect, nextProjectName, onClose, onNext }) {
+  const cardRef = useRf(null);
+  const closeBtnRef = useRf(null);
+  const [mounted, setMounted] = useSt(false);
+  // bodyPhase = how many "chunks" of secondary content to show
+  //   0 = hero + text only (modal just opened)
+  //   1 = + first chunk (the pair, or first standalone wide)
+  //   2 = + second chunk (the widgets image, etc.)
+  //   3+ = + remaining chunks
+  const [bodyPhase, setBodyPhase] = useSt(0);
+
+  useEf(() => {
+    if (!project) { setMounted(false); setBodyPhase(0); return; }
+    setMounted(true);
+    setBodyPhase(0);
+    const reduced = (() => { try { return matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { return false; } })();
+    let raf1 = 0, raf2 = 0;
+    raf1 = requestAnimationFrame(() => {
+      const cardEl = cardRef.current;
+      const wrapEl = cardEl ? cardEl.parentElement : null;
+      if (cardEl && wrapEl && sourceRect && !reduced) {
+        cardEl.style.transition = 'none';
+        const destRect = cardEl.getBoundingClientRect();
+        const sx = sourceRect.width  / destRect.width;
+        const sy = sourceRect.height / destRect.height;
+        const tx = sourceRect.left - destRect.left;
+        const ty = sourceRect.top  - destRect.top;
+        cardEl.style.transform = `translate(${tx}px, ${ty}px) scale(${sx}, ${sy})`;
+        cardEl.style.opacity = '0';
+        void cardEl.offsetWidth;
+        raf2 = requestAnimationFrame(() => {
+          cardEl.style.transition = '';
+          cardEl.style.transform = '';
+          cardEl.style.opacity = '';
+          wrapEl.classList.add('is-open');
+          if (closeBtnRef.current) closeBtnRef.current.focus();
+        });
+      } else {
+        if (wrapEl) wrapEl.classList.add('is-open');
+        if (closeBtnRef.current) closeBtnRef.current.focus();
+      }
+    });
+    const rafId = raf1;
+    // Stagger heavy image decoding so the modal doesn't have to chew through
+    // ~50 MB of bitmaps in a single frame.
+    const t1 = setTimeout(() => setBodyPhase(1), 380);
+    const t2 = setTimeout(() => setBodyPhase(2), 1100);
+    const t3 = setTimeout(() => setBodyPhase(3), 1800);
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose();
+      if (e.key === 'Tab' && cardRef.current) {
+        const focusables = cardRef.current.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])');
+        if (!focusables.length) return;
+        const first = focusables[0], last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => {
+      cancelAnimationFrame(rafId);
+      if (raf2) cancelAnimationFrame(raf2);
+      clearTimeout(t1); clearTimeout(t2); clearTimeout(t3);
+      window.removeEventListener('keydown', onKey);
+    };
+  }, [project, onClose]);
+
+  if (!project || !mounted) return null;
+
+  const onBackdrop = (e) => {
+    if (e.target === e.currentTarget) onClose();
+  };
+
+  // Tolerant accessors so legacy projects (plain string images) still work.
+  const srcOf = (item) => (typeof item === 'string' ? item : item && item.src);
+  const layoutOf = (item, idx) => {
+    if (item && typeof item === 'object' && item.layout) return item.layout;
+    // Legacy default sequence: first is hero, rest are wide.
+    return idx === 0 ? 'hero' : 'wide';
+  };
+  const captionOf = (item) => (item && typeof item === 'object' ? item.caption : null);
+  const frameOf = (item) => !!(item && typeof item === 'object' && item.frame);
+
+  const hero = project.images && project.images[0];
+  const restImages = project.noHero ? (project.images || []) : (project.images || []).slice(1);
+  const hasFeatures = Array.isArray(project.features) && project.features.length > 0;
+  const metaThird = project.stack
+    ? { k: 'Stack', v: project.stack }
+    : { k: 'Scope', v: project.scope };
+
+  return (
+    <div className="work-modal" role="dialog" aria-modal="true" aria-labelledby="work-modal-title">
+      <div className="work-modal__backdrop" onClick={onBackdrop} />
+      <div className="work-modal__card" ref={cardRef}>
+        <div className="work-modal__hdr">
+          <div>
+            <div id="work-modal-title" className="work-modal__title">{project.name}</div>
+            <div className="work-modal__sub">{project.type} · {project.year}</div>
+          </div>
+          <button ref={closeBtnRef} className="work-modal__close" onClick={onClose} aria-label="Close case study">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1L13 13M13 1L1 13" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg>
+          </button>
+        </div>
+        <div className="work-modal__body">
+          {hero && !project.noHero && (
+            <ModalImage
+              src={srcOf(hero)}
+              alt={project.name + ' — hero'}
+              layout={layoutOf(hero, 0)}
+              caption={captionOf(hero)}
+            />
+          )}
+
+          <div className={hasFeatures ? 'work-modal__intro' : ''}>
+            <p className="work-modal__copy">{project.blurb}</p>
+            {hasFeatures && (
+              <aside className="work-modal__features" aria-label="Features">
+                <div className="work-modal__features-title">Features</div>
+                <ul>
+                  {project.features.map((f, i) => <li key={i}>{f}</li>)}
+                </ul>
+              </aside>
+            )}
+          </div>
+
+          {(() => {
+            // Build chunks first (a pair counts as ONE chunk so the two images
+            // sharing a row stay together) then reveal only the first `bodyPhase`.
+            const chunks = [];
+            let i = 0;
+            while (i < restImages.length) {
+              const cur = restImages[i];
+              const next = restImages[i + 1];
+              const curLayout  = layoutOf(cur, i + 1);
+              const nextLayout = next ? layoutOf(next, i + 2) : null;
+              if ((curLayout === 'wide' && nextLayout === 'portrait') ||
+                  (curLayout === 'half' && nextLayout === 'half')) {
+                chunks.push({ type: 'pair', cur, next, idx: i, curLayout, nextLayout, even: curLayout === 'half' });
+                i += 2;
+              } else {
+                chunks.push({ type: 'single', item: cur, layout: curLayout, idx: i });
+                i += 1;
+              }
+            }
+            return chunks.slice(0, bodyPhase).map((chunk) => {
+              if (chunk.type === 'pair') {
+                return (
+                  <div key={'pair-' + chunk.idx} className={'work-modal__pair' + (chunk.even ? ' work-modal__pair--even' : '')}>
+                    <ModalImage
+                      src={srcOf(chunk.cur)}
+                      alt={project.name + ' — image ' + (chunk.idx + 2)}
+                      layout={chunk.curLayout}
+                      caption={captionOf(chunk.cur)}
+                      frame={frameOf(chunk.cur)}
+                    />
+                    <ModalImage
+                      src={srcOf(chunk.next)}
+                      alt={project.name + ' — image ' + (chunk.idx + 3)}
+                      layout={chunk.nextLayout}
+                      caption={captionOf(chunk.next)}
+                      frame={frameOf(chunk.next)}
+                    />
+                  </div>
+                );
+              }
+              return (
+                <ModalImage
+                  key={chunk.idx}
+                  src={srcOf(chunk.item)}
+                  alt={project.name + ' — image ' + (chunk.idx + 2)}
+                  layout={chunk.layout}
+                  caption={captionOf(chunk.item)}
+                  frame={frameOf(chunk.item)}
+                />
+              );
+            });
+          })()}
+
+          <div className="work-modal__meta">
+            <div><div className="k">Year</div><div className="v">{project.year}</div></div>
+            <div><div className="k">Role</div><div className="v">{project.role}</div></div>
+            <div><div className="k">{metaThird.k}</div><div className="v">{metaThird.v}</div></div>
+          </div>
+
+          <div className="work-modal__footer">
+            {project.live && (
+              <a className="work-modal__btn" href={'https://' + project.live} target="_blank" rel="noreferrer">
+                Visit {project.live} <ArrowUR className="h-3.5 w-3.5" />
+              </a>
+            )}
+            <button className="work-modal__btn work-modal__btn--ghost" onClick={onNext}>
+              Next: {nextProjectName} →
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const __MODAL_IMG_DIMS = {
+  hero:     { w: 1920, h: 1080 },
+  wide:     { w: 1600, h: 1200 },
+  portrait: { w: 900,  h: 1200 },
+  widgets:  { w: 1920, h: 1080 },
+  half:     { w: 900,  h: 1200 },
+};
+
+function ModalImage({ src, alt, layout = 'wide', caption = null, frame = false }) {
+  const ref = useRf(null);
+  const [loaded, setLoaded] = useSt(false);
+  const dims = __MODAL_IMG_DIMS[layout] || __MODAL_IMG_DIMS.wide;
+  return (
+    <figure className={'work-modal__figure work-modal__figure--' + layout}>
+      <img
+        ref={ref}
+        src={src}
+        alt={alt}
+        width={dims.w}
+        height={dims.h}
+        loading="lazy"
+        decoding="async"
+        onLoad={() => setLoaded(true)}
+        className={'work-modal__img work-modal__img--' + layout + (frame ? ' work-modal__img--framed' : '') + (loaded ? ' is-loaded' : '')}
+      />
+      {caption && <figcaption className="work-modal__caption">{caption}</figcaption>}
+    </figure>
+  );
+}
+
+/* ---------- CTA ---------- */
+function CTA() {
+  return (
+    <section id="contact" className="relative py-24">
+      <div className="mx-auto max-w-7xl px-6">
+        <div data-reveal className="relative overflow-hidden rounded-[24px] sm:rounded-[40px] bg-gradient-to-br from-ink via-brand-900 to-brand-800 p-6 text-white sm:p-10 lg:p-16">
+          <BMark className="absolute -right-20 -top-20 h-[420px] w-[420px]" opacity={0.12} />
+          <div className="relative grid gap-10 md:grid-cols-2">
+            <div>
+              <Pill tone="light">Let's build something serious</Pill>
+              <h3 className="mt-5 text-balance text-[28px] font-bold leading-[1.05] tracking-[-0.02em] sm:text-[44px] lg:text-[60px]">
+                Ready to stop<br />settling for<br /><span className="italic text-brand-300">generic?</span>
+              </h3>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <ButtonPrimary data-cal-link="momcilo-brandlayer" data-cal-config='{"layout":"month_view"}' className="bg-white !text-ink hover:!bg-brand-100">Book a free call</ButtonPrimary>
+                <ButtonGhost onClick={() => { window.location.href = 'mailto:hello@brandlayer.no'; }} className="!bg-white/10 !text-white hairline-strong hover:!bg-white/15">hello@brandlayer.no</ButtonGhost>
+              </div>
+            </div>
+            <div className="rounded-3xl bg-white/8 p-6 ring-1 ring-white/15 backdrop-blur">
+              <div className="flex items-center gap-3">
+                <div className="grid h-16 w-16 place-items-center rounded-full bg-white/15 ring-1 ring-white/20 overflow-hidden">
+                  <img src="assets/crystal-b.png" alt="" className="h-[140%] w-[140%] object-contain" />
+                </div>
+                <div>
+                  <div className="text-[14px] font-semibold">Quick 15-minute intro call</div>
+                  <div className="text-[12px] text-white/55">Mon–Thu · 9:00–18:00 CET · with Momcilo</div>
+                </div>
+              </div>
+              <div className="mt-5 grid grid-cols-7 gap-1.5" aria-label="Sample availability — click any slot to open the real calendar">
+                {Array.from({ length: 21 }).map((_, i) => {
+                  const active = [3, 6, 8, 12, 15, 17, 19].includes(i);
+                  const taken = [0, 4, 10, 13].includes(i);
+                  if (active) {
+                    return (
+                      <button
+                        key={i}
+                        data-cal-link="momcilo-brandlayer"
+                        data-cal-config='{"layout":"month_view"}'
+                        className="aspect-square rounded-md text-[11px] font-medium transition bg-white text-ink ring-1 ring-white hover:scale-105"
+                        aria-label={`Open booking calendar (sample slot ${i + 8})`}
+                      >{i + 8}</button>
+                    );
+                  }
+                  return (
+                    <span
+                      key={i}
+                      aria-hidden="true"
+                      className={
+                        "aspect-square rounded-md text-[11px] font-medium grid place-items-center " +
+                        (taken ? "bg-white/5 text-white/30 line-through" : "bg-white/10 text-white/70")
+                      }
+                    >{i + 8}</span>
+                  );
+                })}
+              </div>
+              <div className="mt-5 flex items-center justify-between rounded-xl bg-black/30 px-3 py-2.5 text-[12px]">
+                <span className="text-white/60">15-min intro · CET</span>
+                <span className="rounded-full bg-brand-400 px-2.5 py-1 text-ink">Free</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- FOOTER ---------- */
+/* Live local time for the footer — ticks once per minute, aligned to the minute. */
+function LocalTime() {
+  const fmt = () => {
+    try {
+      return new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Oslo', hour: '2-digit', minute: '2-digit', timeZoneName: 'short' }).format(new Date());
+    } catch (e) { return ''; }
+  };
+  const [now, setNow] = React.useState(fmt);
+  React.useEffect(() => {
+    let interval;
+    const align = setTimeout(() => {
+      setNow(fmt());
+      interval = setInterval(() => setNow(fmt()), 60000);
+    }, (61 - new Date().getSeconds()) * 1000);
+    return () => { clearTimeout(align); clearInterval(interval); };
+  }, []);
+  return <>Drammen, Norway{now ? ' · ' + now : ''}</>;
+}
+
+/* Click-to-copy email with a small "Copied ✓" confirmation; falls back to mailto. */
+function CopyEmail({ email }) {
+  const [copied, setCopied] = React.useState(false);
+  const timer = React.useRef(null);
+  React.useEffect(() => () => clearTimeout(timer.current), []);
+  const onClick = (e) => {
+    if (!navigator.clipboard || !navigator.clipboard.writeText) return; // no API → normal mailto
+    e.preventDefault();
+    navigator.clipboard.writeText(email).then(() => {
+      setCopied(true);
+      clearTimeout(timer.current);
+      timer.current = setTimeout(() => setCopied(false), 1600);
+    }).catch(() => { window.location.href = 'mailto:' + email; });
+  };
+  return (
+    <a href={'mailto:' + email} onClick={onClick} title="Click to copy" className="inline-flex items-center gap-2 text-white/75 hover:text-white transition">
+      {email}
+      <span aria-live="polite" className={"pointer-events-none font-mono text-[10px] text-emerald-300 transition-all duration-300 " + (copied ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-0.5")}>Copied ✓</span>
+    </a>
+  );
+}
+
+function Footer() {
+  const cols = [
+    { t: 'Studio', l: [
+      { label: 'Process', href: '#process' },
+      { label: 'Privacy', href: 'privacy.html' },
+      { label: '404', href: '404.html' },
+    ]},
+    { t: 'Work', l: [
+      { label: 'Selected', href: '#work' },
+      { label: 'Legal', href: 'legal.html' },
+    ]},
+    { t: 'Services', l: [
+      { label: 'Portfolio sites' },
+      { label: 'Conversion' },
+      { label: 'E-commerce' },
+      { label: 'Care plans' },
+    ]},
+    { t: 'Contact', l: [
+      { label: 'hello@brandlayer.no', copy: true },
+      { label: 'Drammen, Norway', clock: true },
+      { label: 'Instagram', href: 'https://www.instagram.com/yourbrandlayer', ext: true },
+      { label: 'CV', href: 'cv.html' },
+    ]},
+  ];
+  return (
+    <footer className="relative bg-ink text-white footer-cut">
+      <div className="mx-auto max-w-7xl px-6 pb-0 pt-20">
+        <div className="flex flex-col gap-12 md:flex-row md:items-start md:justify-between">
+          <div data-reveal style={{ '--i': 0 }} className="max-w-md">
+            <div className="flex items-center gap-3">
+              <img src="assets/logo.png" alt="" className="h-10 w-10 object-contain" />
+              <span className="text-[20px] font-semibold tracking-[-0.02em]">Brand Layer</span>
+            </div>
+            <p className="mt-4 text-[15px] leading-relaxed text-white/65">
+              A small studio in Drammen, Norway. We design and build a handful of websites a year — for people who care about the difference.
+            </p>
+            <div className="mt-6 flex items-center gap-3 text-[13px] text-white/55">
+              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
+              Booking {bookingStatus.projects} for {bookingStatus.quarter}
+            </div>
+          </div>
+          <div className="grid flex-1 grid-cols-2 gap-8 sm:grid-cols-4">
+            {cols.map((c, ci) => (
+              <div key={c.t} data-reveal style={{ '--i': ci + 1 }}>
+                <div className="text-[11px] uppercase tracking-[0.22em] text-white/40">{c.t}</div>
+                <ul className="mt-4 space-y-2.5 text-[14px]">
+                  {c.l.map(item => (
+                    <li key={item.label}>
+                      {item.copy
+                        ? <CopyEmail email={item.label} />
+                        : item.clock
+                        ? <span className="text-white/40"><LocalTime /></span>
+                        : item.href
+                        ? <a href={item.href} target={item.ext ? '_blank' : undefined} rel={item.ext ? 'noopener' : undefined} className="text-white/75 hover:text-white transition">{item.label}</a>
+                        : <span className="text-white/40">{item.label}</span>}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-16 flex flex-wrap items-center justify-between gap-4 border-t border-white/10 py-6 text-[12px] text-white/50">
+          <span>© {new Date().getFullYear()} Brand Layer Studio. All work, all our own.</span>
+          <span className="font-mono">brandlayer.no</span>
+        </div>
+      </div>
+
+      {/* Cropped footer wordmark */}
+      <div className="relative h-[clamp(104px,14vw,220px)] overflow-hidden">
+        <div className="mx-auto max-w-[1600px] px-6">
+          <div
+            className="flex items-start justify-between gap-[clamp(2rem,8vw,8rem)] whitespace-nowrap leading-[0.78] tracking-[-0.05em] font-bold text-white select-none"
+            style={{ fontSize: 'clamp(120px, 28vw, 460px)' }}
+            aria-label="BRAND L"
+          >
+            <span>BRAND</span>
+            <span className="shrink-0">L</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+Object.assign(window, { Nav, Hero, TrustedMarquee, Services, Process, Work, CTA, Footer });
+
+</script>
+<script type="text/babel" data-presets="react">
+/* ---------- Motion helpers ---------- */
+const __prefersReducedMotion = () => {
+  try { return window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { return false; }
+};
+const __isCoarsePointer = () => {
+  try { return window.matchMedia('(pointer: coarse)').matches; } catch (e) { return false; }
+};
+
+function useReveal() {
+  React.useEffect(() => {
+    if (__prefersReducedMotion()) {
+      document.querySelectorAll('[data-reveal]').forEach(el => el.classList.add('is-in-view'));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          el.classList.add('is-in-view');
+          io.unobserve(el);
+          // After the staggered transition completes, drop the data-reveal
+          // attribute so :hover transforms (e.g. .bento) can win without
+          // fighting `[data-reveal].is-in-view { transform: none }`.
+          const cs = getComputedStyle(el);
+          const durMs = (parseFloat(cs.transitionDuration) || 0.7) * 1000;
+          const delMs = (parseFloat(cs.transitionDelay) || 0) * 1000;
+          const ms = durMs + delMs + 120;
+          setTimeout(() => { el.removeAttribute('data-reveal'); el.classList.remove('is-in-view'); }, ms);
+        }
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.12 });
+
+    const scan = () => {
+      document.querySelectorAll('[data-reveal]:not(.is-in-view)').forEach(el => {
+        if (!el.__revealObserved) { el.__revealObserved = true; io.observe(el); }
+      });
+    };
+    scan();
+    const mo = new MutationObserver(scan);
+    mo.observe(document.body, { childList: true, subtree: true });
+    return () => { mo.disconnect(); io.disconnect(); };
+  }, []);
+}
+
+function useMagnetic(strength = 0.18, radius = 120) {
+  const ref = React.useRef(null);
+  React.useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (__prefersReducedMotion() || __isCoarsePointer()) return;
+    let raf = 0;
+    let cx = 0, cy = 0;        // current offset
+    let tx = 0, ty = 0;        // target offset
+    let inside = false;
+    const tick = () => {
+      cx += (tx - cx) * 0.18;
+      cy += (ty - cy) * 0.18;
+      el.style.transform = `translate3d(${cx.toFixed(2)}px, ${cy.toFixed(2)}px, 0)`;
+      if (Math.abs(tx - cx) > 0.05 || Math.abs(ty - cy) > 0.05 || inside) {
+        raf = requestAnimationFrame(tick);
+      } else {
+        el.style.transform = '';
+        raf = 0;
+      }
+    };
+    const onMove = (e) => {
+      const r = el.getBoundingClientRect();
+      const px = e.clientX - (r.left + r.width / 2);
+      const py = e.clientY - (r.top + r.height / 2);
+      const dist = Math.hypot(px, py);
+      if (dist < radius) {
+        inside = true;
+        const k = (1 - dist / radius) * strength;
+        tx = px * k * 0.7;
+        ty = py * k * 0.7;
+        if (!raf) raf = requestAnimationFrame(tick);
+      } else if (inside) {
+        inside = false; tx = 0; ty = 0;
+        if (!raf) raf = requestAnimationFrame(tick);
+      }
+    };
+    const onLeave = () => {
+      inside = false; tx = 0; ty = 0;
+      if (!raf) raf = requestAnimationFrame(tick);
+    };
+    window.addEventListener('pointermove', onMove, { passive: true });
+    window.addEventListener('pointerleave', onLeave);
+    return () => {
+      window.removeEventListener('pointermove', onMove);
+      window.removeEventListener('pointerleave', onLeave);
+      if (raf) cancelAnimationFrame(raf);
+      el.style.transform = '';
+    };
+  }, [strength, radius]);
+  return ref;
+}
+
+function useIntroReady() {
+  const [ready, setReady] = React.useState(() => !document.getElementById('brand-intro'));
+  React.useEffect(() => {
+    if (ready) return;
+    const onLift = () => setReady(true);
+    window.addEventListener('brand:intro-lifted', onLift);
+    const t = setTimeout(() => setReady(true), 1600);
+    return () => { window.removeEventListener('brand:intro-lifted', onLift); clearTimeout(t); };
+  }, [ready]);
+  return ready;
+}
+
+function CountUp({ value, duration = 900, decimals = 0, suffix = '', start = true }) {
+  const [n, setN] = React.useState(start ? value : 0);
+  React.useEffect(() => {
+    if (!start) return;
+    if (__prefersReducedMotion()) { setN(value); return; }
+    const t0 = performance.now();
+    let raf = 0;
+    const tick = (t) => {
+      const p = Math.min(1, (t - t0) / duration);
+      const eased = 1 - Math.pow(1 - p, 3);
+      setN(value * eased);
+      if (p < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [value, duration, start]);
+  return <>{n.toFixed(decimals)}{suffix}</>;
+}
+
+Object.assign(window, { useReveal, useMagnetic, useIntroReady, CountUp });
+
+function ScrollTopButton() {
+  const [visible, setVisible] = React.useState(false);
+  React.useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 600);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+  const back = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  return (
+    <button
+      className={'scroll-top-btn' + (visible ? ' is-visible' : '')}
+      onClick={back}
+      aria-label="Back to top"
+    >
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M8 13V3M3 8l5-5 5 5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    </button>
+  );
+}
+
+function App() {
+  useReveal();
+  return (
+    <div className="relative min-h-screen">
+      <a href="#main" className="skip-link">Skip to main content</a>
+      <Nav />
+      <main id="main">
+        <Hero />
+        <TrustedMarquee />
+        <Services />
+        <Process />
+        <Work />
+        <CTA />
+      </main>
+      <Footer />
+      <ScrollTopButton />
+    </div>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+
+</script>
+</body>
+</html>
