@@ -38,6 +38,11 @@
   .codeblock { padding: 16px 20px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 12px; line-height: 1.9; white-space: pre; overflow-x: auto; cursor: text; caret-color: transparent; }
   .codeblock:focus { outline: none; }
   .codeblock:focus .caret { display: none; } /* the block caret overlay takes over while typing */
+  /* iOS Safari auto-zooms on focus if the focused element's font-size is under 16px.
+     Bump only while actually editing on narrow viewports — desktop and the idle look stay untouched. */
+  @media (max-width: 640px) {
+    .codeblock:focus { font-size: 16px; }
+  }
   .caret-typing {
     display: none; position: absolute; width: 7px;
     background: rgba(130,89,197,0.7);
