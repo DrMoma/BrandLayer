@@ -2333,6 +2333,11 @@ function CodeWindow() {
 
     let raf = 0;
     const queue = () => { if (!raf) raf = requestAnimationFrame(() => { raf = 0; update(); }); };
+    // Re-lock on every focus, not just the first — the editable div stays
+    // mounted after a blur (Reset is the only thing that unmounts it), so a
+    // second tap back in re-focuses the same element without this effect
+    // re-running, and Safari would otherwise zoom for real on that tap.
+    const onFocus = () => { lockAutoZoom(); queue(); };
     const onBlur = () => { unlockAutoZoom(); queue(); };
 
     lockAutoZoom();
@@ -2353,14 +2358,14 @@ function CodeWindow() {
     document.addEventListener('selectionchange', queue);
     el.addEventListener('scroll', queue, { passive: true });
     el.addEventListener('blur', onBlur);
-    el.addEventListener('focus', queue);
+    el.addEventListener('focus', onFocus);
     window.addEventListener('resize', queue);
     return () => {
       unlockAutoZoom();
       document.removeEventListener('selectionchange', queue);
       el.removeEventListener('scroll', queue);
       el.removeEventListener('blur', onBlur);
-      el.removeEventListener('focus', queue);
+      el.removeEventListener('focus', onFocus);
       window.removeEventListener('resize', queue);
       if (raf) cancelAnimationFrame(raf);
     };
