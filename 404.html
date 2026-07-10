@@ -38,11 +38,6 @@
   .codeblock { padding: 16px 20px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 12px; line-height: 1.9; white-space: pre; overflow-x: auto; cursor: text; caret-color: transparent; }
   .codeblock:focus { outline: none; }
   .codeblock:focus .caret { display: none; } /* the block caret overlay takes over while typing */
-  /* iOS Safari auto-zooms on focus if the focused element's font-size is under 16px.
-     Bump only while actually editing on narrow viewports — desktop and the idle look stay untouched. */
-  @media (max-width: 640px) {
-    .codeblock:focus { font-size: 16px; }
-  }
   .caret-typing {
     display: none; position: absolute; width: 7px;
     background: rgba(130,89,197,0.7);
@@ -111,6 +106,16 @@
         document.execCommand('insertText', false, t);
       });
       code.addEventListener('keydown', function (e) { if (e.key === 'Escape') code.blur(); });
+
+      // iOS Safari force-zooms the page when a focused element's font-size is
+      // under 16px. Instead of enlarging the text (which visibly changes the
+      // look), briefly cap the page's zoom while editing — the keyboard still
+      // opens, nothing on screen resizes, and pinch-zoom returns on blur.
+      var viewportMeta = document.querySelector('meta[name="viewport"]');
+      var VIEWPORT_DEFAULT = 'width=device-width, initial-scale=1';
+      var VIEWPORT_NO_AUTOZOOM = 'width=device-width, initial-scale=1, maximum-scale=1';
+      code.addEventListener('focus', function () { if (viewportMeta) viewportMeta.setAttribute('content', VIEWPORT_NO_AUTOZOOM); });
+      code.addEventListener('blur', function () { if (viewportMeta) viewportMeta.setAttribute('content', VIEWPORT_DEFAULT); });
 
       // Same block caret as the site's animated one, drawn at the real
       // selection (the native caret is hidden via caret-color).

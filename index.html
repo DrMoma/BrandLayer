@@ -1665,6 +1665,22 @@ Object.assign(window, { LogoB, Wordmark, Pill, ArrowUR, ButtonPrimary, ButtonGho
 /* Major sections: Nav, Hero, Marquee, Services, Process, Work, CTA, Footer */
 const { useEffect: useEf, useState: useSt, useRef: useRf, useMemo: useMm } = React;
 
+/* iOS Safari force-zooms the whole page when a focused element's font-size is
+   under 16px. Rather than enlarging the code editor's text (which visibly
+   changes its look), briefly cap the page's zoom while it's focused — the
+   keyboard still opens, nothing on screen resizes, and pinch-zoom returns the
+   instant focus leaves so accessibility elsewhere is unaffected. */
+const VIEWPORT_DEFAULT = 'width=device-width, initial-scale=1';
+const VIEWPORT_NO_AUTOZOOM = 'width=device-width, initial-scale=1, maximum-scale=1';
+function lockAutoZoom() {
+  const m = document.querySelector('meta[name="viewport"]');
+  if (m) m.setAttribute('content', VIEWPORT_NO_AUTOZOOM);
+}
+function unlockAutoZoom() {
+  const m = document.querySelector('meta[name="viewport"]');
+  if (m) m.setAttribute('content', VIEWPORT_DEFAULT);
+}
+
 /* ---------- BOOKING STATUS — auto quarter/year + per-quarter random count ----------
    Quarter & year come from today's date and roll over on their own
    (Q4 in Oct, then Q1 · 2027 on 1 Jan, and so on).
@@ -2317,7 +2333,9 @@ function CodeWindow() {
 
     let raf = 0;
     const queue = () => { if (!raf) raf = requestAnimationFrame(() => { raf = 0; update(); }); };
+    const onBlur = () => { unlockAutoZoom(); queue(); };
 
+    lockAutoZoom();
     el.focus();
     const pt = clickPt.current;
     try {
@@ -2334,13 +2352,14 @@ function CodeWindow() {
 
     document.addEventListener('selectionchange', queue);
     el.addEventListener('scroll', queue, { passive: true });
-    el.addEventListener('blur', queue);
+    el.addEventListener('blur', onBlur);
     el.addEventListener('focus', queue);
     window.addEventListener('resize', queue);
     return () => {
+      unlockAutoZoom();
       document.removeEventListener('selectionchange', queue);
       el.removeEventListener('scroll', queue);
-      el.removeEventListener('blur', queue);
+      el.removeEventListener('blur', onBlur);
       el.removeEventListener('focus', queue);
       window.removeEventListener('resize', queue);
       if (raf) cancelAnimationFrame(raf);
@@ -2374,7 +2393,7 @@ function CodeWindow() {
             spellCheck={false}
             onPaste={onPaste}
             onKeyDown={(e) => { if (e.key === 'Escape') e.currentTarget.blur(); }}
-            className="h-full overflow-auto p-4 sm:p-5 font-mono text-[16px] sm:text-[12px] leading-[1.9] outline-none [caret-color:transparent]"
+            className="h-full overflow-auto p-4 sm:p-5 font-mono text-[11px] sm:text-[12px] leading-[1.9] outline-none [caret-color:transparent]"
             dangerouslySetInnerHTML={{ __html: editHtml }}
           />
         )}
