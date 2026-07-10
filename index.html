@@ -4,23 +4,28 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Brand Layer — Design meets Craft</title>
-<meta name="description" content="Brand Layer — Design meets Craft. Independent design & build studio. Drammen, Norway." />
+<meta name="description" content="Independent design & build studio in Drammen, Norway. Fast, SEO-first websites, apps and brand identities that convert. Webdesign, nettsider og visuell identitet for bedrifter i Norge." />
+<meta name="keywords" content="web design agency Norway, web design studio Drammen, website agency, brand identity studio, app design, webdesign byrå Drammen, nettside byrå Norge, nettsider, visuell identitet, merkevarebygging" />
 <meta name="author" content="Brand Layer" />
+<meta name="geo.region" content="NO-33" />
+<meta name="geo.placename" content="Drammen" />
+<meta name="ICBM" content="59.7439, 10.2045" />
 <meta name="theme-color" content="#FAFAFA" />
 <link rel="canonical" href="https://brandlayer.no/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Brand Layer" />
 <meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="nb_NO" />
 <meta property="og:url" content="https://brandlayer.no/" />
 <meta property="og:title" content="Brand Layer — Design meets Craft" />
-<meta property="og:description" content="Independent design & build studio. Drammen, Norway." />
+<meta property="og:description" content="Independent design & build studio in Drammen, Norway. Fast, SEO-first websites, apps and brand identities that convert." />
 <meta property="og:image" content="https://brandlayer.no/assets/pngbackround.png" />
 <meta property="og:image:width" content="2752" />
 <meta property="og:image:height" content="1536" />
 <meta property="og:image:alt" content="Brand Layer — a 3D B sculpture resting on a stone table" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Brand Layer — Design meets Craft" />
-<meta name="twitter:description" content="Independent design & build studio. Drammen, Norway." />
+<meta name="twitter:description" content="Independent design & build studio in Drammen, Norway. Fast, SEO-first websites, apps and brand identities that convert." />
 <meta name="twitter:image" content="https://brandlayer.no/assets/pngbackround.png" />
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
@@ -31,31 +36,88 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Brand Layer",
-  "alternateName": "Brand Layer Studio",
-  "url": "https://brandlayer.no",
-  "logo": "https://brandlayer.no/assets/logo.png",
-  "image": "https://brandlayer.no/assets/pngbackround.png",
-  "description": "Independent design & build studio. We design and build a handful of websites a year for people who care about the difference.",
-  "sameAs": ["https://www.instagram.com/yourbrandlayer"],
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Drammen",
-    "addressCountry": "NO"
-  },
-  "areaServed": "Worldwide",
-  "priceRange": "$$$",
-  "founder": {
-    "@type": "Person",
-    "name": "Momcilo"
-  },
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "sales",
-    "email": "hello@brandlayer.no",
-    "availableLanguage": ["en", "no"]
-  }
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://brandlayer.no/#studio",
+      "name": "Brand Layer",
+      "alternateName": "Brand Layer Studio",
+      "slogan": "Design meets Craft",
+      "url": "https://brandlayer.no",
+      "logo": "https://brandlayer.no/assets/logo.png",
+      "image": "https://brandlayer.no/assets/pngbackround.png",
+      "description": "Independent design & build studio in Drammen, Norway. We design and build fast, SEO-first websites, apps and brand identities — a handful of projects a year for people who care about the difference.",
+      "email": "hello@brandlayer.no",
+      "sameAs": ["https://www.instagram.com/yourbrandlayer"],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Drammen",
+        "addressRegion": "Buskerud",
+        "addressCountry": "NO"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 59.7439,
+        "longitude": 10.2045
+      },
+      "areaServed": ["Norway", "Worldwide"],
+      "priceRange": "$$$",
+      "knowsAbout": ["web design", "website development", "SEO", "Next.js", "Shopify", "iOS app development", "UI/UX design", "brand identity", "logo design", "webdesign", "nettsider", "visuell identitet", "merkevarebygging"],
+      "keywords": "web design agency Norway, web design studio Drammen, brand identity studio, webdesign byrå Drammen, nettside byrå Norge",
+      "founder": {
+        "@type": "Person",
+        "@id": "https://brandlayer.no/cv#momcilo",
+        "name": "Momcilo Paunov",
+        "jobTitle": "Founder & Designer",
+        "url": "https://brandlayer.no/cv"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "email": "hello@brandlayer.no",
+        "url": "https://cal.com/momcilo-brandlayer",
+        "availableLanguage": ["en", "no"]
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Website design & development",
+              "description": "We build fast, SEO-optimized websites with clear messaging and conversion-focused design that helps turn visitors into customers."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "App & UI/UX design",
+              "description": "Crafting intuitive, user-centered interfaces that blend clarity, beauty, and effortless interaction."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Branding & identity",
+              "description": "Memorable logos, cohesive color palettes and typography — complete visual identity systems that reflect your brand's personality."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://brandlayer.no/#website",
+      "url": "https://brandlayer.no",
+      "name": "Brand Layer — Design meets Craft",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://brandlayer.no/#studio" }
+    }
+  ]
 }
 </script>
 <script src="https://cdn.tailwindcss.com"></script>
@@ -752,6 +814,80 @@
   </script>
 </head>
 <body class="overflow-x-hidden">
+<!-- Static mirror of the rendered page for crawlers that don't execute JavaScript
+     (AI crawlers like GPTBot/ClaudeBot/PerplexityBot). Text is identical to what
+     the React app renders — this is the page, not extra content. -->
+<noscript>
+  <main>
+    <section>
+      <p>Available for work</p>
+      <h1>Lead your business with intention.</h1>
+      <p>We don't do generic. We build websites that work as hard as you do, engineered with modern tools (Next.js, Vercel) and the shokunin spirit of precision.</p>
+      <p>Independent studio · Drammen, Norway</p>
+      <p><a href="https://cal.com/momcilo-brandlayer">Book a free 15-min call</a></p>
+    </section>
+    <section>
+      <h2>What we build — Services built to drive impact</h2>
+      <p>We are a small studio. We say no to most projects so the ones we take ship without compromise.</p>
+      <h3>Website — Sites that pay rent.</h3>
+      <p>We build fast, SEO-optimized websites with clear messaging and conversion-focused design that helps turn visitors into customers.</p>
+      <h3>UI/UX design — Apps developed specifically for you</h3>
+      <p>Crafting intuitive, user-centered interfaces that blend clarity, beauty, and effortless interaction.</p>
+      <h3>Branding &amp; identity — Logos, palettes, and visual worlds.</h3>
+      <p>We create branding that truly lives and breathes your identity. From designing memorable logos to crafting cohesive color palettes and typography, we ensure every element reflects your brand's personality. We also develop mockups and other visual assets.</p>
+      <h3>The craft layer — Performance, accessibility, and motion — by default.</h3>
+      <ul>
+        <li>Sub-second loads — Avg LCP under 1s</li>
+        <li>WCAG 2.2 AA — Accessibility by design</li>
+        <li>Custom motion — CSS · Web Animations API</li>
+        <li>CI-baked — Lighthouse on every deploy</li>
+      </ul>
+    </section>
+    <section>
+      <h2>The process — We do it in three steps.</h2>
+      <p>One small team, end-to-end. The same designer who sketches your hero is the engineer who deploys it.</p>
+      <h3>01 Strategy — Discovery &amp; positioning</h3>
+      <p>A week sprint including interviews, competitor analysis, and content mapping. You leave with a written brief everyone agrees on.</p>
+      <h3>02 Design — Brand &amp; interface</h3>
+      <p>Designed and built in code from day one using real content, real typography, and reusable components. Every screen is created to feel finished from the start, not filled with placeholder text.</p>
+      <h3>03 Deployment — Build, ship, measure</h3>
+      <p>Built on a fast, modern stack with analytics included from day one. We host and manage everything for you, keep the site running smoothly, and stay involved through a 30 day polish period after launch.</p>
+    </section>
+    <section>
+      <h2>Selected work — Receipts. Not deliverables.</h2>
+      <h3>Fdami — App · iOS · Swift · faith companion (2024)</h3>
+      <p>Fdami is a full-stack iOS application developed in Swift, designed to deliver a seamless and intuitive user experience from concept to final product. The project covers the entire development lifecycle — planning, coding, UI/UX design, testing, and optimization — demonstrating my ability to manage and execute an app development process from A to Z, integrating both technical and creative skills.</p>
+      <ul><li>Prayer times</li><li>Notifications</li><li>Home-screen widgets</li><li>Compass for prayer direction</li><li>Fasting times and calendar</li><li>How-to-pray tutorials</li></ul>
+      <h3>William — Website · Portfolio · video, photo, editing (2025)</h3>
+      <p>A portfolio for William, who shoots video, takes photos, and edits his own work. He wanted the work up front and everything else out of the way. The landing screen stays quiet, just his name and what he does, then the works section switches to bold red with large type so projects read like a printed spread. Sets are grouped by place, like the Bangkok shoot, and the site runs on four pages: Home, Works, Services, and Contact.</p>
+      <ul><li>Video and photo galleries</li><li>Projects grouped by location</li><li>Works, services, and contact</li><li>Image-first landing screen</li><li>Fast-loading full-bleed images</li></ul>
+      <h3>LANDR — Ecommerce Landing Page · snowboard and outdoor gear (2026)</h3>
+      <p>LANDR is premium outdoor gear from Niklas B. Lohne Hansen, a Paralympic para snowboarder and six-time Norwegian champion. He built the line around what he could not find in the shops, gear made for real cold and hard riding and tested in the conditions it is meant for. The brief was a single landing page that puts the story first and lets it carry the product, from snowboard gloves to the Recon tactical backpack. It leads with a full-bleed hero, moves into a clean product grid, and stays fast and sharp on a phone.</p>
+      <ul><li>Story-first landing page</li><li>Full-bleed hero imagery</li><li>Clean product grid</li><li>Built on Shopify</li><li>Fast and mobile-first</li></ul>
+      <h3>Brand Layer — Brand identity · Identity system (2026)</h3>
+      <p>Brand Layer is our own studio, so the identity had to earn its keep before we asked anyone else to trust theirs. It is built on one idea, that a brand is a stack of considered layers rather than a single logo. There is a clean B mark that reads at any size, a wordmark set in a precise grotesque, and a deep violet that stays calm next to loud client work. The system carries across the site, the deck, and social, and it is documented well enough to hold its line as the studio grows.</p>
+      <ul><li>B mark and wordmark</li><li>Deep violet palette</li><li>Precise grotesque type</li><li>Site, deck, and social</li><li>Living brand guidelines</li></ul>
+    </section>
+    <section>
+      <h2>Let's build something serious — Ready to stop settling for generic?</h2>
+      <p>Quick 15-minute intro call · Mon–Thu · 9:00–18:00 CET · with Momcilo · Free</p>
+      <p><a href="https://cal.com/momcilo-brandlayer">Book a free call</a> or email <a href="mailto:hello@brandlayer.no">hello@brandlayer.no</a></p>
+    </section>
+    <section lang="nb">
+      <h2>Om Brand Layer</h2>
+      <p>Brand Layer er et uavhengig designstudio i Drammen som designer og utvikler nettsider, apper og visuell identitet for bedrifter i Norge. Raske, SEO-optimaliserte nettsider bygget for konvertering — webdesign, nettbutikk og merkevarebygging.</p>
+    </section>
+    <footer>
+      <p>Brand Layer — Design meets Craft · Drammen, Norway</p>
+      <ul>
+        <li><a href="/cv">CV — Momcilo Paunov</a></li>
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/legal">Legal</a></li>
+        <li><a href="https://www.instagram.com/yourbrandlayer">Instagram</a></li>
+      </ul>
+    </footer>
+  </main>
+</noscript>
 <div id="brand-intro" class="brand-intro" aria-hidden="true">
   <div class="brand-intro__stack" id="brand-intro-stack">
     <img class="brand-intro__b" src="assets/logo.png" alt="" decoding="sync" />
@@ -2039,13 +2175,14 @@ function ServiceRow({ n, kicker, title, body, tags, panel }) {
   );
 }
 
-/* Shared light "Mac window" frame used by all three service visuals */
-function Window({ file, pill, pillTone = 'emerald', children }) {
+/* Shared light "Mac window" frame used by all three service visuals.
+   `interactive` drops aria-hidden so focusable content inside stays legal. */
+function Window({ file, pill, pillTone = 'emerald', interactive = false, children }) {
   const toneCls = pillTone === 'brand'
     ? 'bg-brand-500/10 text-brand-700'
     : 'bg-emerald-500/10 text-emerald-700';
   return (
-    <div aria-hidden="true" className="relative flex aspect-[4/3] sm:aspect-[16/10] flex-col overflow-hidden rounded-lg bg-white hairline-strong shadow-[0_24px_60px_-45px_rgba(50,22,85,0.4)]">
+    <div aria-hidden={interactive ? undefined : true} className="relative flex aspect-[4/3] sm:aspect-[16/10] flex-col overflow-hidden rounded-lg bg-white hairline-strong shadow-[0_24px_60px_-45px_rgba(50,22,85,0.4)]">
       {/* title bar */}
       <div className="flex shrink-0 items-center gap-2 border-b border-ink/[0.06] px-4 py-3">
         <span className="group/dots flex items-center gap-2">
@@ -2087,24 +2224,179 @@ function CodeWindow() {
   // Start on the last hot line ('</section>') so reduced-motion users see the
   // caret where it always used to sit; otherwise step through like an edit pass.
   const [step, setStep] = React.useState(hot.length - 1);
+  // Easter egg: click the code to type in it for real. While editing we render
+  // a frozen contentEditable snapshot of the same markup — React must not
+  // reconcile against DOM the visitor is mutating, and the caret loop pauses.
+  const [editHtml, setEditHtml] = React.useState(null);
+  const liveRef = React.useRef(null);
+  const editRef = React.useRef(null);
+  const wrapRef = React.useRef(null);
+  const blockCaretRef = React.useRef(null);
+  const clickPt = React.useRef(null);
+
   React.useEffect(() => {
+    if (editHtml !== null) return;
     let reduced = false;
     try { reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
     if (reduced) return;
     const id = setInterval(() => setStep((s) => (s + 1) % hot.length), 1400);
     return () => clearInterval(id);
-  }, []);
+  }, [editHtml]);
   const active = hot[step];
 
+  const startEdit = (e) => {
+    const src = liveRef.current;
+    if (!src) return;
+    const clone = src.cloneNode(true);
+    clone.querySelectorAll('[data-caret]').forEach((n) => n.remove());
+    clone.querySelectorAll('[data-line]').forEach((n) => n.classList.remove('bg-brand-50/80'));
+    clickPt.current = { x: e.clientX, y: e.clientY };
+    setEditHtml(clone.innerHTML);
+  };
+
+  // Once the editable snapshot is in the DOM, focus it, drop the caret where
+  // the visitor clicked, and mirror the animated look onto the real selection:
+  // the row highlight follows the line being edited and a block caret (same as
+  // the animated one) tracks the real text caret, which is hidden.
+  React.useEffect(() => {
+    if (editHtml === null || !editRef.current) return;
+    const el = editRef.current;
+    const hl = { current: null };
+
+    const caretRect = () => {
+      const sel = getSelection();
+      if (!sel || !sel.rangeCount || !sel.isCollapsed) return null;
+      const range = sel.getRangeAt(0);
+      if (!el.contains(range.startContainer)) return null;
+      let r = range.getClientRects()[0] || range.getBoundingClientRect();
+      if (!r || (!r.height && !r.width && !r.top && !r.left)) {
+        // Collapsed range on an empty line reports no rect — measure a
+        // zero-width marker instead, then put the selection back.
+        const m = document.createElement('span');
+        m.textContent = '\u200B';
+        range.cloneRange().insertNode(m);
+        r = m.getBoundingClientRect();
+        const p = m.parentNode;
+        p.removeChild(m);
+        if (p.normalize) p.normalize();
+        sel.removeAllRanges();
+        sel.addRange(range);
+      }
+      return r;
+    };
+
+    const update = () => {
+      const caretEl = blockCaretRef.current, wrap = wrapRef.current;
+      if (!caretEl || !wrap) return;
+      const sel = getSelection();
+      let node = sel && sel.rangeCount ? sel.anchorNode : null;
+      let block = null;
+      while (node && node !== el) {
+        if (node.nodeType === 1 && node.parentNode === el) { block = node; break; }
+        node = node.parentNode;
+      }
+      if (block && document.activeElement === el) {
+        // Lines the visitor creates with Enter need the shared line chrome
+        // before they can carry the highlight.
+        if (!block.hasAttribute('data-line')) { block.setAttribute('data-line', ''); block.classList.add('-mx-1', 'rounded', 'px-1'); }
+        if (hl.current !== block) {
+          if (hl.current) hl.current.classList.remove('bg-brand-50/80');
+          block.classList.add('bg-brand-50/80');
+          hl.current = block;
+        }
+      }
+      const r = document.activeElement === el ? caretRect() : null;
+      if (!r) { caretEl.style.visibility = 'hidden'; return; }
+      const w = wrap.getBoundingClientRect();
+      const fs = parseFloat(getComputedStyle(el).fontSize) || 12;
+      const h = fs * 1.05;
+      caretEl.style.height = h + 'px';
+      caretEl.style.transform = 'translate(' + (r.left - w.left) + 'px, ' + (r.top - w.top + (r.height - h) / 2) + 'px)';
+      caretEl.style.visibility = 'visible';
+    };
+
+    let raf = 0;
+    const queue = () => { if (!raf) raf = requestAnimationFrame(() => { raf = 0; update(); }); };
+
+    el.focus();
+    const pt = clickPt.current;
+    try {
+      let range = null;
+      if (pt && document.caretRangeFromPoint) {
+        range = document.caretRangeFromPoint(pt.x, pt.y);
+      } else if (pt && document.caretPositionFromPoint) {
+        const p = document.caretPositionFromPoint(pt.x, pt.y);
+        if (p) { range = document.createRange(); range.setStart(p.offsetNode, p.offset); range.collapse(true); }
+      }
+      if (range) { const sel = getSelection(); sel.removeAllRanges(); sel.addRange(range); }
+    } catch (err) {}
+    update();
+
+    document.addEventListener('selectionchange', queue);
+    el.addEventListener('scroll', queue, { passive: true });
+    el.addEventListener('blur', queue);
+    el.addEventListener('focus', queue);
+    window.addEventListener('resize', queue);
+    return () => {
+      document.removeEventListener('selectionchange', queue);
+      el.removeEventListener('scroll', queue);
+      el.removeEventListener('blur', queue);
+      el.removeEventListener('focus', queue);
+      window.removeEventListener('resize', queue);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, [editHtml]);
+
+  const onPaste = (e) => {
+    e.preventDefault();
+    const t = (e.clipboardData || window.clipboardData).getData('text/plain');
+    document.execCommand('insertText', false, t);
+  };
+
   return (
-    <Window file="index.html" pill="LCP 0.6s">
-      <div className="p-4 sm:p-5 font-mono text-[11px] sm:text-[12px] leading-[1.9]">
-        {lines.map((l, i) => (
-          <div key={i} className={"whitespace-pre -mx-1 rounded px-1 transition-colors duration-200 " + (l.cls || '') + (i === active ? ' bg-brand-50/80' : '')}>
-            {l.jsx}
-            {i === active && <span className="ml-1 inline-block h-[1.05em] w-[7px] translate-y-[2px] bg-brand-500/70 animate-pulse" />}
+    <Window file="index.html" pill="LCP 0.6s" interactive>
+      <div ref={wrapRef} className="relative h-full">
+        {editHtml === null ? (
+          <div key="live" ref={liveRef} onClick={startEdit} className="h-full cursor-text p-4 sm:p-5 font-mono text-[11px] sm:text-[12px] leading-[1.9]">
+            {lines.map((l, i) => (
+              <div key={i} data-line className={"whitespace-pre -mx-1 rounded px-1 transition-colors duration-200 " + (l.cls || '') + (i === active ? ' bg-brand-50/80' : '')}>
+                {l.jsx}
+                {i === active && <span data-caret className="ml-1 inline-block h-[1.05em] w-[7px] translate-y-[2px] bg-brand-500/70 animate-pulse" />}
+              </div>
+            ))}
           </div>
-        ))}
+        ) : (
+          <div
+            key="edit"
+            ref={editRef}
+            contentEditable
+            suppressContentEditableWarning
+            spellCheck={false}
+            onPaste={onPaste}
+            onKeyDown={(e) => { if (e.key === 'Escape') e.currentTarget.blur(); }}
+            className="h-full overflow-auto p-4 sm:p-5 font-mono text-[11px] sm:text-[12px] leading-[1.9] outline-none [caret-color:transparent]"
+            dangerouslySetInnerHTML={{ __html: editHtml }}
+          />
+        )}
+        {editHtml !== null && (
+          <span
+            ref={blockCaretRef}
+            aria-hidden="true"
+            className="pointer-events-none absolute left-0 top-0 w-[7px] bg-brand-500/70 animate-pulse invisible"
+          />
+        )}
+        <button
+          type="button"
+          aria-label="Reset code to original"
+          title="Reset code"
+          onClick={() => setEditHtml(null)}
+          className={"absolute bottom-2 right-2 grid h-6 w-6 place-items-center rounded-full transition-colors " + (editHtml !== null ? "bg-ink/[0.06] text-ink/60 hover:bg-ink/10 hover:text-ink" : "bg-ink/[0.03] text-ink/25 hover:bg-ink/[0.08] hover:text-ink/70")}
+        >
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+            <path d="M3 3v5h5" />
+          </svg>
+        </button>
       </div>
     </Window>
   );
@@ -2283,7 +2575,7 @@ const PROJECTS = [
       'Fasting times and calendar',
       'How-to-pray tutorials',
     ],
-    cardImage: 'assets/work%20cards/card%201.png',
+    cardImage: 'assets/work%20cards/card%201.webp',
     cardNoChrome: true,
     images: [
       { src: 'assets/My%20Work/Fdami%20-%20IOS%20Swift%20App/Imige1-Main.jpeg',          layout: 'hero' },
@@ -2309,7 +2601,7 @@ const PROJECTS = [
       'Image-first landing screen',
       'Fast-loading full-bleed images',
     ],
-    cardImage: 'assets/work%20cards/card%202.png',
+    cardImage: 'assets/work%20cards/card%202.webp',
     cardNoChrome: true,
     images: [
       { src: 'assets/My%20Work/William%20-%20PhotoWEB/Imige1-Main.jpeg', layout: 'hero' },
@@ -2335,7 +2627,7 @@ const PROJECTS = [
       'Built on Shopify',
       'Fast and mobile-first',
     ],
-    cardImage: 'assets/work%20cards/card%203.png?v=2',
+    cardImage: 'assets/work%20cards/card%203.webp',
     cardNoChrome: true,
     images: [
       { src: 'assets/My%20Work/Niklas%20-%20Lander/imige1-main.jpeg', layout: 'hero' },
@@ -2362,7 +2654,7 @@ const PROJECTS = [
       'Site, deck, and social',
       'Living brand guidelines',
     ],
-    cardImage: 'assets/work%20cards/card%204.png',
+    cardImage: 'assets/work%20cards/card%204.webp',
     cardNoChrome: true,
     images: [
       { src: 'assets/My%20Work/Brandlayer%20-%20Identey/Brand%20Layer%203_4%20Instagram.png', layout: 'half', frame: true },
@@ -2517,6 +2809,45 @@ function Work() {
     };
   }, []);
 
+  // Warm all card thumbnails once the browser is idle after page load, so the
+  // cards never slide on stage before their artwork is in cache. The scroll
+  // handler's own op > 0.03 assignment then finds src already set and skips.
+  // Also covers prefers-reduced-motion, where the scroll handler never runs.
+  useEf(() => {
+    let idleId = 0, timerId = 0, cancelled = false;
+    const warm = () => {
+      if (cancelled) return;
+      cardRefs.current.forEach((el) => {
+        const img = el && el.querySelector('img.cstack-card__img');
+        if (img && !img.src && img.dataset.src) {
+          img.src = img.dataset.src;
+          if (img.decode) img.decode().catch(() => {});
+        }
+      });
+    };
+    const schedule = () => {
+      if (window.requestIdleCallback) idleId = requestIdleCallback(warm, { timeout: 2500 });
+      else timerId = setTimeout(warm, 600);
+    };
+    if (document.readyState === 'complete') schedule();
+    else window.addEventListener('load', schedule, { once: true });
+    return () => {
+      cancelled = true;
+      window.removeEventListener('load', schedule);
+      if (idleId && window.cancelIdleCallback) cancelIdleCallback(idleId);
+      clearTimeout(timerId);
+    };
+  }, []);
+
+  // Pre-fetch the case-study's first image for whichever card is on top of
+  // the stack, so the modal opens with its hero already in cache.
+  useEf(() => {
+    const p = PROJECTS[activeIdx];
+    const first = p && p.images && p.images[0];
+    const src = typeof first === 'string' ? first : first && first.src;
+    if (src) new Image().src = src;
+  }, [activeIdx]);
+
   const openProject = React.useCallback((id, sourceEl) => {
     if (sourceEl) {
       const r = sourceEl.getBoundingClientRect();
@@ -2669,10 +3000,13 @@ function WorkModal({ project, sourceRect, nextProjectName, onClose, onNext }) {
     setBodyPhase(0);
     const reduced = (() => { try { return matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { return false; } })();
     let raf1 = 0, raf2 = 0;
-    raf1 = requestAnimationFrame(() => {
+    raf1 = requestAnimationFrame(function attempt() {
       const cardEl = cardRef.current;
       const wrapEl = cardEl ? cardEl.parentElement : null;
-      if (cardEl && wrapEl && sourceRect && !reduced) {
+      // React may not have committed the modal DOM on the very first frame —
+      // without this retry the modal could stay invisible (is-open never set).
+      if (!cardEl || !wrapEl) { raf2 = requestAnimationFrame(attempt); return; }
+      if (sourceRect && !reduced) {
         cardEl.style.transition = 'none';
         const destRect = cardEl.getBoundingClientRect();
         const sx = sourceRect.width  / destRect.width;
@@ -2690,7 +3024,7 @@ function WorkModal({ project, sourceRect, nextProjectName, onClose, onNext }) {
           if (closeBtnRef.current) closeBtnRef.current.focus();
         });
       } else {
-        if (wrapEl) wrapEl.classList.add('is-open');
+        wrapEl.classList.add('is-open');
         if (closeBtnRef.current) closeBtnRef.current.focus();
       }
     });
@@ -2895,14 +3229,14 @@ function CTA() {
               <h3 className="mt-5 text-balance text-[28px] font-bold leading-[1.05] tracking-[-0.02em] sm:text-[44px] lg:text-[60px]">
                 Ready to stop<br />settling for<br /><span className="italic text-brand-300">generic?</span>
               </h3>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <ButtonPrimary data-cal-link="momcilo-brandlayer" data-cal-config='{"layout":"month_view"}' className="bg-white !text-ink hover:!bg-brand-100">Book a free call</ButtonPrimary>
-                <ButtonGhost onClick={() => { window.location.href = 'mailto:hello@brandlayer.no'; }} className="!bg-white/10 !text-white hairline-strong hover:!bg-white/15">hello@brandlayer.no</ButtonGhost>
+              <div className="mt-8 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
+                <ButtonPrimary data-cal-link="momcilo-brandlayer" data-cal-config='{"layout":"month_view"}' className="bg-white !text-ink hover:!bg-brand-100 max-sm:w-full max-sm:justify-center max-sm:whitespace-nowrap max-sm:!px-2 max-sm:!text-[12px] max-sm:gap-1.5 max-sm:[&>span:nth-child(2)]:h-4 max-sm:[&>span:nth-child(2)]:w-4">Book a free call</ButtonPrimary>
+                <ButtonGhost onClick={() => { window.location.href = 'mailto:hello@brandlayer.no'; }} className="!bg-white/10 !text-white hairline-strong hover:!bg-white/15 max-sm:w-full max-sm:justify-center max-sm:whitespace-nowrap max-sm:!px-2 max-sm:!text-[12px]">hello@brandlayer.no</ButtonGhost>
               </div>
             </div>
             <div className="rounded-3xl bg-white/8 p-6 ring-1 ring-white/15 backdrop-blur">
               <div className="flex items-center gap-3">
-                <div className="grid h-16 w-16 place-items-center rounded-full bg-white/15 ring-1 ring-white/20 overflow-hidden">
+                <div className="grid h-16 w-16 shrink-0 place-items-center rounded-full bg-white/15 ring-1 ring-white/20 overflow-hidden">
                   <img src="assets/crystal-b.png" alt="" className="h-[140%] w-[140%] object-contain" />
                 </div>
                 <div>
