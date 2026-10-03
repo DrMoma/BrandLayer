@@ -11,7 +11,39 @@ import { useEffect, useRef } from "react";
  *
  * The native cursor is only hidden once this is actually mounted and running,
  * so a touch device or a reduced-motion user is never left without one.
+ *
+ * The ring lives on <body>, outside every tone section, so it can't inherit
+ * their tokens. Instead it reads the background under the pointer and turns
+ * white over dark ground — the footer, ink buttons, a picked date.
  */
+
+/** Parses a computed background colour to [r, g, b, a] on a 0–255 scale. */
+function parseColor(value: string): [number, number, number, number] | null {
+  const rgb = value.match(/^rgba?\(([^)]+)\)$/);
+  if (rgb) {
+    const [r, g, b, a = 1] = rgb[1].split(/[\s,/]+/).filter(Boolean).map(Number);
+    return [r, g, b, a];
+  }
+  // color-mix() and alpha modifiers compute to color(srgb r g b / a), 0–1.
+  const srgb = value.match(/^color\(srgb ([^)]+)\)$/);
+  if (srgb) {
+    const [r, g, b, a = 1] = srgb[1].split(/[\s/]+/).filter(Boolean).map(Number);
+    return [r * 255, g * 255, b * 255, a];
+  }
+  return null;
+}
+
+/** True when the first solid background behind `start` is dark. */
+function onDarkGround(start: Element | null): boolean {
+  for (let n = start; n && n !== document.documentElement; n = n.parentElement) {
+    const c = parseColor(getComputedStyle(n).backgroundColor);
+    if (!c || c[3] < 0.5) continue;
+    const [r, g, b] = c;
+    return 0.2126 * r + 0.7152 * g + 0.0722 * b < 128;
+  }
+  return false;
+}
+
 export function Cursor() {
   const dotRef = useRef<HTMLDivElement>(null);
 
@@ -32,6 +64,7 @@ export function Cursor() {
     let tx = x;
     let ty = y;
     let raf = 0;
+    let lastTarget: EventTarget | null = null;
 
     const onMove = (e: PointerEvent) => {
       tx = e.clientX;
@@ -39,6 +72,12 @@ export function Cursor() {
       el.style.opacity = "1";
 
       wake();
+
+      // Only re-read the ground when the pointer crosses onto a new element.
+      if (e.target !== lastTarget) {
+        lastTarget = e.target;
+        el.dataset.tone = onDarkGround(e.target as Element) ? "light" : "dark";
+      }
 
       const target = (e.target as HTMLElement)?.closest?.("[data-cursor]") as HTMLElement | null;
       const label = target?.dataset.cursor ?? "";
@@ -88,15 +127,19 @@ export function Cursor() {
       ref={dotRef}
       aria-hidden="true"
       data-state="idle"
+      data-tone="dark"
       className={[
         "pointer-events-none fixed left-0 top-0 z-[90] grid place-items-center rounded-full",
         "border border-[var(--text-default)] transition-[width,height,background-color,border-color,opacity] duration-300 ease-[var(--ease-house)]",
         "size-2 data-[state=active]:size-14",
         "data-[state=active]:border-[var(--accent)] data-[state=active]:bg-[color-mix(in_srgb,var(--accent)_18%,transparent)]",
         "data-[state=active]:backdrop-blur-sm",
+        // Over dark ground: white ring, white label, a faint white fill.
+        "data-[tone=light]:border-white",
+        "data-[state=active]:data-[tone=light]:border-white data-[state=active]:data-[tone=light]:bg-white/15",
       ].join(" ")}
     >
-      <span className="type-label text-[9px] text-[var(--text-default)] opacity-0 transition-opacity duration-200 [[data-state=active]>&]:opacity-100" />
+      <span className="type-label text-[9px] text-[var(--text-default)] opacity-0 transition-[opacity,color] duration-200 [[data-state=active]>&]:opacity-100 [[data-tone=light]>&]:text-white" />
     </div>
   );
 }
