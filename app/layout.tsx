@@ -23,7 +23,7 @@ const serif = Instrument_Serif({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — ${site.tagline}`,
+    default: site.title,
     template: `%s — ${site.name}`,
   },
   description: site.description,
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: site.name,
-    title: `${site.name} — ${site.tagline}`,
+    title: site.title,
     description: site.description,
     url: site.url,
     locale: "en_US",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — ${site.tagline}`,
+    title: site.title,
     description: site.description,
   },
   robots: { index: true, follow: true },

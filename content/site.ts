@@ -7,6 +7,8 @@ export const site = {
   domain: "brandlayer.no",
   url: "https://brandlayer.no",
   tagline: "We help founders build brands that last.",
+  /** Short enough to read in a browser tab; the tagline carries the detail. */
+  title: "Brand Layer — Few brands. All in.",
   description:
     "Brand Layer is run by Momcilo Paunov. We've launched three brands — this one, Perlemor and LANDR — and now help a few founders at a time build theirs: guiding, working alongside, and sometimes investing. You pitch first.",
 

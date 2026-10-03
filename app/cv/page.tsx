@@ -7,7 +7,7 @@ import { Label, ArrowLink } from "@/components/blocks/primitives";
 import { Reveal } from "@/components/motion/Reveal";
 
 export const metadata: Metadata = {
-  title: `CV — ${cv.name}`,
+  title: "CV",
   description: cv.intro,
   alternates: { canonical: "/cv" },
 };

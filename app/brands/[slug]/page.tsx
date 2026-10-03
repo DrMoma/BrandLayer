@@ -24,7 +24,7 @@ export async function generateMetadata({
   // The layout template appends "— Brand Layer", so Brand Layer's own page
   // needs a different title or the name doubles up.
   return {
-    title: brand.name === site.name ? "The story" : brand.name,
+    title: brand.name === site.name ? "Our story" : brand.name,
     description,
     alternates: { canonical: `/brands/${brand.slug}` },
     openGraph: { title: brand.name, description },
