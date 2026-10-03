@@ -18,9 +18,10 @@ const AUTO_MS = 6000;
  * HERO
  *
  * A fit-to-width display lockup over a media carousel. The carousel is
- * landscape on desktop and reframes to 351:527 portrait on mobile — the same
- * proportion the reference site uses, and the reason its hero feels designed
- * for a phone rather than letterboxed onto one.
+ * landscape on desktop and switches to the full 9:16 portrait cut on phones,
+ * deliberately taller than the screen so the first scroll travels through
+ * the film rather than past it (at least 88% of the screen's height, so even
+ * short phones get a stretch of it below the fold).
  *
  * Autoplay stops on hover, on focus, when the tab is hidden and under reduced
  * motion. Slides are a live region so the change is announced.
@@ -89,7 +90,7 @@ export function Hero({ title, slides }: { title: string; slides: readonly Slide[
           anim="curtain"
           delay={160}
           gate={introDone}
-          className="relative w-full overflow-hidden bg-[var(--bg-raised)] aspect-[351/527] max-h-[max(240px,calc(100svh-340px))] tablet:aspect-[16/9] tablet:max-h-none"
+          className="relative w-full overflow-hidden bg-[var(--bg-raised)] aspect-[9/16] min-h-[88svh] tablet:aspect-[16/9] tablet:min-h-0"
         >
           {slides.map((slide, i) => (
             <div
