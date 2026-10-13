@@ -15,6 +15,7 @@ export const cv = {
     { period: "2023", role: "Sales (apprentice)", org: "Elvebyen Sykkel og Hage" },
   ],
   education: [
+    { period: "2026 —", role: "Shipping Management", org: "NTNU · Ålesund" },
     { period: "Ongoing", role: "General Studies Supplement (VG3)", org: "Akademiet Ypsilon · Drammen" },
     { period: "—", role: "Sales, Service & Tourism", org: "Drammen VGS" },
     { period: "—", role: "Middle School", org: "Kjøsterud Ungdomsskole" },
